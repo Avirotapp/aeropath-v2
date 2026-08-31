@@ -20,6 +20,9 @@ export default function AppShell({
   const displayName =
     profile?.display_name || profile?.full_name || "AeroPath user";
   const roleLabel = formatRoles(roles);
+  const bookingRoute = roles.includes("STUDENT") || roles.includes("INSTRUCTOR")
+    ? "MY_BOOKINGS"
+    : "BOOKING_OPERATIONS";
   const currentLabel =
     groups.flatMap((group) => group.items).find((item) => item.route === activePage)
       ?.label || (activePage === "DASHBOARD" ? "Flight Deck" : "AeroPath");
@@ -214,6 +217,12 @@ export default function AppShell({
             onClick={() => navigate("DASHBOARD")}
           />
           <MobileNavButton
+            active={activePage === bookingRoute}
+            icon="bookings"
+            label="Bookings"
+            onClick={() => navigate(bookingRoute)}
+          />
+          <MobileNavButton
             active={activePage === "TIMETABLE"}
             icon="timetable"
             label="Timetable"
@@ -292,7 +301,7 @@ function navigationGroups(roles) {
   if (instructor || adminEquivalent) {
     operations.push({
       route: "PREFLIGHT_REVIEWS",
-      label: "Pre-flight Reviews",
+      label: "Pre-flight",
       icon: "preflight",
     });
   }

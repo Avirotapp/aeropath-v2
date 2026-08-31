@@ -675,7 +675,7 @@ export default function SafetyControlTowerPage({
 
 
   return (
-    <main className="app">
+    <main className="app safety-redesign-page">
       <header className="topbar">
         <Brand />
 

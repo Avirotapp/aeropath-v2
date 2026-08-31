@@ -819,7 +819,7 @@ export default function FilesPage({
 
 
   return (
-    <main className="app">
+    <main className="app files-redesign-page">
       <header className="topbar">
         <Brand compact />
 

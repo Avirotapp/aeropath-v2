@@ -12,7 +12,7 @@ Visual identity 2.25.10 replaces the generic module-card diamonds with lightweig
 
 Visual identity 2.25.11 follows the supplied AeroPath interface references: an immersive parked-Bristell sunset sign-in with a floating glass form, Aeroviation wing lockups, blue active navigation, a compact mobile Flight Deck, quick actions and Home/Timetable/Sessions/More navigation.
 
-Visual identity 2.25.17 keeps the supplied Aeroviation reference direction while making the full app calmer and easier to scan: page headings, cards, forms, controls, tables and status labels now share one compact operational finish. The Operations Centre now uses compact icon-based actions and removes the duplicate module directory, leaving the sidebar as the reliable workspace navigation. The official dark-background Aeroviation lockup and pale-blue outline icon family remain consistent, while active work is clearer without turning every screen into a brightly coloured dashboard.
+Visual identity 2.25.18 applies the supplied AeroPath showcase direction across the full application without changing the locked workflows. The desktop shell is denser and calmer, every page shares one hierarchy for headings, cards, forms, tables and status badges, popouts use restrained glass treatment, and mobile navigation now provides Home, Bookings, Timetable, Sessions and More. The Operations Centre uses icon-based actions and a responsive two-column operational queue. The official Aeroviation lockup and pale-blue outline icon family remain consistent, with green, amber, red and blue reserved for operational meaning.
 
 ## Migration 025 scope
 
@@ -58,7 +58,6 @@ Use the Supabase SQL Editor as the database-owner role. The migration is additiv
 - A resource type cannot change after booking history exists.
 - Session completion and training-record creation remain atomic.
 - Training mode is derived from the booked resource, never trusted from the browser.
-- Deployment connection check
 - Consequential actions are audited and immutable history is retained.
 - No application workflow uses `window.alert`, `window.confirm` or `window.prompt`.
 - Operational errors use the blurred AeroPath error modal rather than inline browser-style banners.

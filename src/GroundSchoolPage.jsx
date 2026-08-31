@@ -1121,7 +1121,7 @@ export default function GroundSchoolPage({ role, initialContext = null, onBack, 
   }
 
   return (
-    <main className="app">
+    <main className="app ground-school-redesign-page">
       <header className="topbar">
         <Brand />
         <div className="topbar-right">

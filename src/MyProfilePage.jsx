@@ -62,7 +62,7 @@ export default function MyProfilePage({ onBack, onSignOut }) {
   }
 
   return (
-    <main className="app">
+    <main className="app profile-redesign-page">
       <header className="topbar">
         <Brand />
         <div className="topbar-right"><button className="secondary" onClick={onSignOut}>Sign out</button></div>

@@ -338,7 +338,7 @@ export default function AuditTrailPage({
 
 
   return (
-    <main className="app">
+    <main className="app audit-redesign-page">
       <header className="topbar">
         <Brand compact />
 

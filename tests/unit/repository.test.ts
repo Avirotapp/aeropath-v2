@@ -240,7 +240,26 @@ describe('AeroPath M025 repository contracts', () => {
     expect(brand).toContain('aero-wing-image');
     expect(app).toContain('<h1>Your training journey</h1>');
     expect(shell).toContain('label="Home"');
+    expect(shell).toContain('label="Bookings"');
     expect(shell).toContain('label="Sessions"');
+  });
+
+  it('applies the reference-led R9 system across the full application shell', () => {
+    const shell = readFileSync(join(projectRoot, 'src/AppShell.jsx'), 'utf8');
+    const operations = readFileSync(join(projectRoot, 'src/AdminOperationsCentrePage.jsx'), 'utf8');
+    const styles = readFileSync(join(projectRoot, 'src/styles.css'), 'utf8');
+    const files = readFileSync(join(projectRoot, 'src/FilesPage.jsx'), 'utf8');
+    const safety = readFileSync(join(projectRoot, 'src/SafetyControlTowerPage.jsx'), 'utf8');
+
+    expect(shell).toContain('label="Bookings"');
+    expect(operations).toContain('operations-queue-grid');
+    expect(operations).toContain('operations-quick-actions');
+    expect(styles).toContain('UI REDESIGN R9');
+    expect(styles).toContain('.operations-queue-grid');
+    expect(styles).toContain('grid-template-columns: repeat(5');
+    expect(styles).toContain('backdrop-filter: blur(22px)');
+    expect(files).toContain('files-redesign-page');
+    expect(safety).toContain('safety-redesign-page');
   });
 });
 

@@ -6212,3 +6212,819 @@ textarea:focus-visible {
     padding: 13px;
   }
 }
+
+/* =========================================================
+   UI REDESIGN R9 — REFERENCE-LED WHOLE APP SYSTEM
+   ========================================================= */
+:root {
+  --aero-bg: #06111f;
+  --aero-sidebar: #07182a;
+  --aero-surface: #0b2033;
+  --aero-surface-soft: #081a2b;
+  --aero-surface-raised: #0e263b;
+  --aero-border: rgba(116, 169, 211, 0.22);
+  --aero-border-strong: rgba(128, 183, 226, 0.38);
+  --aero-text: #f2f7fc;
+  --aero-muted: #97acc0;
+  --aero-blue: #1597ff;
+  --aero-blue-soft: rgba(21, 151, 255, 0.13);
+  --aero-cyan: #43c5ec;
+  --aero-bronze: #bd7455;
+  --aero-success: #2ed39a;
+  --aero-warning: #f5b63f;
+  --aero-danger: #ff5c6c;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 78% 0%, rgba(21, 98, 159, 0.1), transparent 28%),
+    #06111f;
+  color: var(--aero-text);
+  font-size: 15px;
+}
+
+.aero-shell {
+  grid-template-columns: 248px minmax(0, 1fr);
+}
+
+.aero-sidebar {
+  width: 248px;
+  padding: 16px 12px 14px;
+  border-right-color: rgba(97, 149, 190, 0.24);
+  background:
+    linear-gradient(180deg, rgba(35, 87, 130, 0.1), transparent 24%),
+    linear-gradient(180deg, #07182a, #061321 74%);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(108, 159, 198, 0.35) transparent;
+}
+
+.aero-sidebar-brand {
+  min-height: 108px;
+  padding: 4px 8px 15px;
+  border-bottom-color: rgba(115, 164, 201, 0.2);
+}
+
+.aero-sidebar-brand .aero-brand-lockup {
+  gap: 2px;
+}
+
+.aero-sidebar-brand .aero-wing-wordmark {
+  width: 142px;
+}
+
+.aero-sidebar-brand .aero-lockup-name {
+  margin-top: 3px;
+  font-size: 25px;
+  font-weight: 750;
+  letter-spacing: -0.045em;
+}
+
+.aero-sidebar-brand .aero-brand-lockup small {
+  color: #cf8968;
+  font-size: 8px;
+  letter-spacing: 0.13em;
+}
+
+.aero-sidebar-nav {
+  gap: 17px;
+  padding: 18px 0;
+}
+
+.aero-nav-group {
+  gap: 3px;
+}
+
+.aero-nav-group h2 {
+  margin: 0 10px 5px;
+  color: #6f8aa3;
+  font-size: 9px;
+  letter-spacing: 0.17em;
+}
+
+.aero-nav-item {
+  min-height: 39px;
+  gap: 11px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  color: #b6c5d4;
+  font-size: 13px;
+  font-weight: 560;
+}
+
+.aero-nav-item svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.75;
+}
+
+.aero-nav-item.active {
+  border-color: rgba(42, 146, 246, 0.42);
+  background: linear-gradient(90deg, rgba(10, 111, 213, 0.82), rgba(8, 77, 154, 0.78));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 7px 18px rgba(0, 70, 150, 0.15);
+  color: #ffffff;
+}
+
+.aero-sidebar-footer {
+  padding: 12px 10px 2px;
+}
+
+.aero-utility-bar {
+  min-height: 64px;
+  padding: 8px 24px;
+  border-bottom-color: rgba(111, 165, 207, 0.2);
+  background: rgba(6, 17, 31, 0.86);
+  backdrop-filter: blur(20px) saturate(125%);
+  -webkit-backdrop-filter: blur(20px) saturate(125%);
+}
+
+.aero-utility-context span {
+  color: #6f8da8;
+}
+
+.aero-utility-context strong {
+  font-size: 14px;
+}
+
+.aero-icon-button,
+.aero-profile-button {
+  border-color: rgba(111, 165, 207, 0.25);
+  background: rgba(10, 30, 48, 0.76);
+}
+
+.aero-icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+}
+
+.aero-profile-button {
+  min-height: 43px;
+  border-radius: 12px;
+}
+
+.aero-avatar {
+  width: 33px;
+  height: 33px;
+  border-color: rgba(189, 116, 85, 0.52);
+  background: rgba(189, 116, 85, 0.13);
+}
+
+.aero-profile-menu,
+.aero-notification-panel {
+  border-color: rgba(117, 177, 222, 0.34);
+  background: linear-gradient(150deg, rgba(13, 35, 54, 0.97), rgba(6, 20, 34, 0.97));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(22px) saturate(125%);
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+}
+
+.aero-notification-backdrop {
+  background: rgba(2, 9, 18, 0.46);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.aero-notification-item {
+  border-color: rgba(113, 166, 208, 0.2);
+  background: rgba(7, 24, 40, 0.66);
+}
+
+.aero-notification-item.unread {
+  border-color: rgba(53, 155, 247, 0.42);
+  background: rgba(16, 79, 134, 0.2);
+}
+
+.aero-shell-content > .app {
+  min-height: calc(100vh - 64px);
+}
+
+.aero-shell-content .bookings-page,
+.aero-shell-content .admin-page,
+.aero-shell-content .timetable-page,
+.aero-shell-content .ground-school-page,
+.aero-shell-content .hero {
+  width: min(1240px, calc(100% - 40px));
+}
+
+.aero-shell-content .bookings-page,
+.aero-shell-content .admin-page,
+.aero-shell-content .timetable-page,
+.aero-shell-content .ground-school-page {
+  padding-top: 28px;
+  padding-bottom: 72px;
+}
+
+.aero-shell-content .hero {
+  padding: 30px 0 22px;
+}
+
+.aero-shell-content .aero-page-heading,
+.aero-shell-content .aero-page-hero {
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom-color: rgba(113, 166, 207, 0.16);
+}
+
+.aero-shell-content .aero-page-heading h1,
+.aero-shell-content .aero-page-hero h1,
+.aero-shell-content .bookings-page > h1,
+.aero-shell-content .admin-page h1,
+.aero-shell-content .timetable-page h1 {
+  margin: 5px 0 7px;
+  font-size: clamp(29px, 2.8vw, 38px);
+  font-weight: 720;
+  letter-spacing: -0.042em;
+}
+
+.aero-shell-content .aero-page-heading .muted,
+.aero-shell-content .aero-page-hero .muted {
+  max-width: 720px;
+  color: #9bb0c3;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.aero-shell-content .eyebrow {
+  color: #63b3ff;
+  font-size: 9px;
+  font-weight: 780;
+  letter-spacing: 0.17em;
+}
+
+.aero-shell-content .aero-module-emblem,
+.aero-shell-content .aero-module-emblem.emblem-departures,
+.aero-shell-content .aero-module-emblem.emblem-headset,
+.aero-shell-content .aero-module-emblem.emblem-bookings,
+.aero-shell-content .aero-module-emblem.emblem-vr,
+.aero-shell-content .aero-module-emblem.emblem-aircraft,
+.aero-shell-content .aero-module-emblem.emblem-preflight,
+.aero-shell-content .aero-module-emblem.emblem-history,
+.aero-shell-content .aero-module-emblem.emblem-accounts {
+  width: 60px;
+  height: 60px;
+  border-color: rgba(92, 158, 211, 0.3);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(12, 40, 63, 0.96), rgba(6, 24, 40, 0.96));
+  color: #d8eaff;
+  box-shadow: inset 0 0 20px rgba(54, 142, 211, 0.06);
+}
+
+.aero-shell-content .aero-module-emblem svg {
+  width: 42px;
+  height: 42px;
+  stroke-width: 1.55;
+  filter: drop-shadow(0 0 5px rgba(102, 180, 247, 0.14));
+}
+
+.aero-shell-content .aero-module-emblem.compact {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.aero-shell-content .aero-module-emblem.compact svg {
+  width: 28px;
+  height: 28px;
+}
+
+.aero-shell-content .aero-module-emblem.bare {
+  width: 52px;
+  height: 52px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.aero-shell-content .aero-module-emblem.bare svg {
+  width: 48px;
+  height: 48px;
+}
+
+.aero-shell-content :is(.booking-form-card, .student-booking-card, .card, .user-card, .stat-card, .ground-detail-section, .ground-classroom-card) {
+  border-color: rgba(103, 157, 199, 0.25);
+  border-radius: 13px;
+  background: linear-gradient(145deg, rgba(11, 32, 50, 0.97), rgba(7, 23, 38, 0.98));
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+.aero-shell-content :is(.booking-form-card, .student-booking-card, .user-card, .ground-detail-section) {
+  padding: 20px;
+}
+
+.aero-shell-content .booking-section-heading,
+.aero-shell-content .student-booking-header {
+  gap: 16px;
+}
+
+.aero-shell-content .booking-section-heading {
+  padding-bottom: 12px;
+  border-bottom-color: rgba(112, 166, 208, 0.15);
+}
+
+.aero-shell-content :is(.booking-section-heading, .student-booking-header) h2 {
+  margin-top: 5px;
+  font-size: 20px;
+  letter-spacing: -0.025em;
+}
+
+.aero-shell-content .booking-form {
+  margin-top: 20px;
+}
+
+.aero-shell-content .booking-field {
+  margin-bottom: 15px;
+}
+
+.aero-shell-content .booking-field label,
+.aero-shell-content label {
+  margin-top: 0;
+  color: #d7e4f0;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.aero-shell-content :is(input, select, textarea) {
+  min-height: 45px;
+  padding: 11px 13px;
+  border-color: rgba(112, 166, 208, 0.36);
+  border-radius: 9px;
+  background: rgba(5, 20, 34, 0.78);
+  color: #edf5fc;
+  font-size: 14px;
+}
+
+.aero-shell-content :is(input, select, textarea):focus {
+  border-color: #45a6ff;
+  background: rgba(5, 20, 34, 0.98);
+  box-shadow: 0 0 0 3px rgba(35, 151, 255, 0.11);
+}
+
+.aero-shell-content textarea {
+  min-height: 98px;
+}
+
+.aero-shell-content :is(.primary, .secondary, .danger-button) {
+  min-height: 40px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 680;
+}
+
+.aero-shell-content .primary {
+  background: linear-gradient(180deg, #168bf6, #0968d0);
+  box-shadow: 0 7px 18px rgba(5, 96, 198, 0.2);
+}
+
+.aero-shell-content .secondary {
+  border-color: rgba(111, 166, 208, 0.34);
+  background: rgba(7, 26, 43, 0.62);
+  color: #d5e4f1;
+}
+
+.aero-shell-content .secondary:hover {
+  border-color: #4aa8ff;
+  background: rgba(31, 119, 204, 0.13);
+  color: #ffffff;
+}
+
+.aero-shell-content .admin-stats {
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.aero-shell-content .stat-card {
+  min-height: 84px;
+  padding: 14px 15px;
+  border-radius: 11px;
+}
+
+.aero-shell-content .stat-card strong {
+  font-size: 25px;
+  line-height: 1;
+}
+
+.aero-shell-content .stat-card span {
+  color: #89a8c3;
+  font-size: 9px;
+  letter-spacing: 0.105em;
+}
+
+.aero-shell-content .stat-card.active,
+.aero-shell-content .stat-card.has-work {
+  border-color: rgba(33, 145, 246, 0.65);
+  background: linear-gradient(145deg, rgba(12, 63, 107, 0.98), rgba(7, 37, 66, 0.98));
+  box-shadow: inset 0 0 22px rgba(28, 141, 246, 0.1), 0 8px 20px rgba(0, 69, 139, 0.12);
+}
+
+.aero-shell-content .stat-card.quiet {
+  color: #a7c0d6;
+  opacity: 0.82;
+}
+
+.aero-shell-content .booking-status,
+.aero-shell-content .status,
+.aero-shell-content .aero-page-role,
+.timetable-live-status {
+  min-height: 25px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 760;
+  letter-spacing: 0.075em;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.aero-shell-content .booking-status.approved,
+.aero-shell-content .booking-status.completed {
+  border-color: rgba(46, 211, 154, 0.44);
+  background: rgba(46, 211, 154, 0.1);
+  color: #6ee7bc;
+}
+
+.aero-shell-content .booking-status.requested {
+  border-color: rgba(245, 182, 63, 0.46);
+  background: rgba(245, 182, 63, 0.1);
+  color: #ffd06c;
+}
+
+.aero-shell-content .booking-status.rejected,
+.aero-shell-content .booking-status.cancelled {
+  background: rgba(255, 92, 108, 0.08);
+}
+
+.aero-shell-content :is(table, .booking-details-grid, .ground-compact-list, .timeline-list) {
+  border-color: rgba(104, 158, 200, 0.18);
+}
+
+.aero-shell-content table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.aero-shell-content th {
+  color: #7fa0bc;
+  font-size: 9px;
+  font-weight: 730;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.aero-shell-content :is(td, th) {
+  border-color: rgba(104, 158, 200, 0.14);
+}
+
+.aero-shell-content tbody tr:hover {
+  background: rgba(39, 121, 194, 0.055);
+}
+
+.aero-shell-content .admin-empty {
+  min-height: 76px;
+  padding: 18px;
+  border-color: rgba(104, 158, 200, 0.18);
+  border-radius: 10px;
+  background: rgba(5, 20, 33, 0.45);
+  color: #7f9bb4;
+}
+
+.login-error,
+.signup-success,
+.booking-message {
+  border-radius: 11px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.login-error {
+  border-color: rgba(255, 92, 108, 0.42);
+  background: rgba(72, 18, 30, 0.76);
+}
+
+.signup-success {
+  border-color: rgba(46, 211, 154, 0.4);
+  background: rgba(12, 65, 48, 0.72);
+}
+
+.operations-centre-page > section:not(.hero) {
+  max-width: 1240px !important;
+  padding-inline: 20px !important;
+}
+
+.operations-centre-page .admin-stats {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.operations-centre-page .student-booking-card:has(.operations-quick-actions) {
+  padding: 19px 20px 20px;
+}
+
+.operations-quick-actions {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 15px;
+}
+
+.operations-quick-action {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 7px;
+  min-height: 74px;
+  padding: 10px 7px;
+  border: 1px solid rgba(101, 158, 201, 0.3);
+  border-radius: 10px;
+  background: rgba(6, 23, 38, 0.72);
+  color: #dce9f5;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1.18;
+  text-align: center;
+  transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+}
+
+.operations-quick-action svg {
+  color: #9ed2ff;
+  stroke-width: 1.65;
+}
+
+.operations-quick-action:hover {
+  transform: translateY(-2px);
+  border-color: rgba(69, 166, 255, 0.7);
+  background: rgba(24, 100, 169, 0.17);
+}
+
+.operations-quick-action.primary {
+  border-color: rgba(54, 157, 249, 0.66);
+  background: linear-gradient(145deg, #1278dc, #0a5ab7);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(3, 78, 167, 0.18);
+}
+
+.operations-quick-action.primary svg {
+  color: #ffffff;
+}
+
+.operations-queue-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto 24px;
+}
+
+.operations-queue-section {
+  min-width: 0;
+}
+
+.operations-queue-section .student-booking-card {
+  height: 100%;
+  padding: 18px;
+}
+
+.operations-queue-section .student-booking-list {
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.operations-queue-section .booking-note {
+  margin-top: 0;
+  padding: 13px;
+  border-color: rgba(104, 158, 200, 0.2);
+  background: rgba(5, 20, 34, 0.54);
+}
+
+.operations-queue-section .booking-count {
+  min-width: 31px;
+  height: 31px;
+  font-size: 12px;
+}
+
+.operations-queue-section.is-empty .student-booking-card {
+  min-height: 148px;
+}
+
+.operations-queue-section.has-items {
+  grid-column: span 2;
+}
+
+.flight-deck-page > section:not(.hero) {
+  width: min(1240px, calc(100% - 40px));
+}
+
+.flight-deck-page .admin-stats {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.aero-auth-card {
+  border-color: rgba(111, 174, 225, 0.42);
+  background: linear-gradient(145deg, rgba(12, 34, 60, 0.92), rgba(5, 19, 37, 0.9));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(22px) saturate(120%);
+  -webkit-backdrop-filter: blur(22px) saturate(120%);
+}
+
+.aero-auth-card h2 {
+  font-size: 25px;
+  letter-spacing: -0.03em;
+}
+
+.aero-auth-card input {
+  min-height: 46px;
+  border-radius: 9px;
+}
+
+.aero-auth-card .primary {
+  min-height: 46px;
+  border-radius: 9px;
+}
+
+.aero-loading-card,
+.loading-card {
+  color: #ffffff;
+}
+
+.aero-mobile-nav {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+@media (max-width: 1180px) {
+  .operations-quick-actions {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .operations-centre-page .admin-stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 920px) {
+  .aero-shell {
+    display: block;
+  }
+
+  .aero-sidebar {
+    width: min(292px, 86vw);
+  }
+
+  .aero-utility-bar {
+    min-height: 60px;
+    padding-inline: 14px;
+  }
+
+  .aero-shell-content > .app {
+    min-height: calc(100vh - 60px);
+    padding-bottom: 72px;
+  }
+
+  .aero-shell-content .bookings-page,
+  .aero-shell-content .admin-page,
+  .aero-shell-content .timetable-page,
+  .aero-shell-content .ground-school-page,
+  .aero-shell-content .hero,
+  .flight-deck-page > section:not(.hero) {
+    width: min(100% - 28px, 760px);
+  }
+
+  .operations-centre-page > section:not(.hero) {
+    padding-inline: 14px !important;
+  }
+
+  .operations-queue-grid {
+    width: min(100% - 28px, 760px);
+  }
+
+  .aero-shell-content .aero-page-heading h1,
+  .aero-shell-content .aero-page-hero h1,
+  .aero-shell-content .bookings-page > h1,
+  .aero-shell-content .admin-page h1,
+  .aero-shell-content .timetable-page h1 {
+    font-size: clamp(26px, 7vw, 34px);
+  }
+
+  .operations-quick-actions {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .operations-centre-page .admin-stats,
+  .flight-deck-page .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .aero-shell-content .bookings-page,
+  .aero-shell-content .admin-page,
+  .aero-shell-content .timetable-page,
+  .aero-shell-content .ground-school-page,
+  .aero-shell-content .hero,
+  .flight-deck-page > section:not(.hero) {
+    width: calc(100% - 24px);
+  }
+
+  .aero-shell-content .bookings-page,
+  .aero-shell-content .admin-page,
+  .aero-shell-content .timetable-page,
+  .aero-shell-content .ground-school-page {
+    padding-top: 18px;
+    padding-bottom: 48px;
+  }
+
+  .aero-shell-content .hero {
+    padding-top: 20px;
+  }
+
+  .aero-shell-content .aero-page-heading,
+  .aero-shell-content .aero-page-hero {
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 15px;
+  }
+
+  .aero-shell-content .aero-page-heading h1,
+  .aero-shell-content .aero-page-hero h1,
+  .aero-shell-content .bookings-page > h1,
+  .aero-shell-content .admin-page h1,
+  .aero-shell-content .timetable-page h1 {
+    font-size: 26px;
+  }
+
+  .aero-shell-content .aero-page-heading .muted,
+  .aero-shell-content .aero-page-hero .muted {
+    font-size: 12px;
+  }
+
+  .aero-shell-content .aero-module-emblem {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .aero-shell-content .aero-module-emblem svg {
+    width: 33px;
+    height: 33px;
+  }
+
+  .aero-shell-content :is(.booking-form-card, .student-booking-card, .user-card, .ground-detail-section) {
+    padding: 16px;
+  }
+
+  .operations-centre-page > section:not(.hero) {
+    padding-inline: 12px !important;
+  }
+
+  .operations-quick-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .operations-queue-grid {
+    grid-template-columns: 1fr;
+    width: calc(100% - 24px);
+    gap: 10px;
+  }
+
+  .operations-queue-section.has-items {
+    grid-column: auto;
+  }
+
+  .operations-queue-section.is-empty .student-booking-card {
+    min-height: 132px;
+  }
+
+  .aero-profile-copy,
+  .aero-profile-button > svg {
+    display: none;
+  }
+
+  .aero-profile-button {
+    min-width: 40px;
+    padding: 3px;
+    border: 0;
+    background: transparent;
+  }
+
+  .aero-mobile-nav {
+    min-height: 65px;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .aero-mobile-nav button {
+    gap: 4px;
+    min-width: 0;
+    padding-inline: 3px;
+    font-size: 9px;
+  }
+
+  .aero-mobile-nav button svg {
+    width: 19px;
+    height: 19px;
+  }
+}

@@ -1088,6 +1088,7 @@ export default function AdminOperationsCentrePage({
           </section>
 
 
+          <div className="operations-queue-grid">
           <QueueSection
             eyebrow="GROUND SCHOOL · LIVE"
             title="Ground Sessions in progress"
@@ -1336,6 +1337,7 @@ export default function AdminOperationsCentrePage({
               )
             )}
           </QueueSection>
+          </div>
 
 
           <section
@@ -1421,13 +1423,7 @@ function QueueSection({
     count > 0;
 
   return (
-    <section
-      style={{
-        maxWidth: "1180px",
-        margin: "0 auto 24px",
-        padding: "0 20px",
-      }}
-    >
+    <section className={`operations-queue-section ${hasItems ? "has-items" : "is-empty"}`}>
       <article className="student-booking-card">
         <div className="student-booking-header">
           <div>

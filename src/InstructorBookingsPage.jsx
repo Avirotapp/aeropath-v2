@@ -1047,7 +1047,7 @@ export default function InstructorBookingsPage({
 
 
   return (
-    <main className="app">
+    <main className="app booking-operations-redesign-page">
       <header className="topbar">
         <InstructorBrand />
 

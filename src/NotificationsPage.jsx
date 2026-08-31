@@ -237,7 +237,7 @@ export default function NotificationsPage({
 
 
   return (
-    <main className="app">
+    <main className="app notifications-redesign-page">
       <header className="topbar">
         <Brand compact />
 
