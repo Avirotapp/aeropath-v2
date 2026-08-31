@@ -58,6 +58,7 @@ Use the Supabase SQL Editor as the database-owner role. The migration is additiv
 - A resource type cannot change after booking history exists.
 - Session completion and training-record creation remain atomic.
 - Training mode is derived from the booked resource, never trusted from the browser.
+- Deployment connection check
 - Consequential actions are audited and immutable history is retained.
 - No application workflow uses `window.alert`, `window.confirm` or `window.prompt`.
 - Operational errors use the blurred AeroPath error modal rather than inline browser-style banners.
