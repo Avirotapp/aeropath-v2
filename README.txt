@@ -1,4 +1,4 @@
-AeroPath V2 — M025 Training Resources / Aircraft + UI Redesign R6
+AeroPath V2 — M025 Training Resources / Aircraft + UI Redesign R7
 
 1. Install dependencies: npm install
 2. Copy .env.example to .env.local and add the Supabase values.
@@ -15,6 +15,8 @@ Version 2.25.10 removes the module-card diamonds, adds the requested aviation
 illustrations and introduces the Bristell-at-sunset sign-in scene.
 Version 2.25.11 follows the supplied visual references for the full-screen sign-in,
 Aeroviation wing branding, mobile drawer, dashboard and bottom navigation.
+Version 2.25.16 adds a shared compact operational finish across all modules,
+including page hierarchy, cards, forms, tables, controls and status labels.
 Version 2.25.15 adds a separate wide desktop aircraft scene, precisely recolours
 the official wing logo for dark backgrounds and redraws the complete module icon family
 to follow the supplied reference sheet, including its distinctive fine details. The

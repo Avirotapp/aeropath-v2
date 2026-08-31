@@ -1,6 +1,6 @@
 # AeroPath V2 Build Status
 
-Current milestone: **M025 — Training Resources / Aircraft + UI Redesign R6**
+Current milestone: **M025 — Training Resources / Aircraft + UI Redesign R7**
 
 Implemented in this snapshot:
 
@@ -71,4 +71,4 @@ M025 regression checklist:
 - Deactivation is blocked for future approved/live usage.
 - No native alert/confirm/prompt dialog appears.
 
-Current UI rollout sequence: complete responsive visual QA and extend the refined R6 presentation through the remaining detail views. M026 email-notification delivery follows the locked redesign.
+Current UI rollout sequence: complete responsive visual QA for the R7 shared operational finish. M026 email-notification delivery follows the locked redesign.
