@@ -1,0 +1,5902 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e9f0f8;
+  background: #06111f;
+  font-synthesis: none;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #06111f;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+.login {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(
+    circle at 50% 0%,
+    #12304e 0%,
+    #06111f 58%
+  );
+}
+
+.login-card {
+  width: min(520px, 100%);
+  padding: 42px;
+  border: 1px solid #29445e;
+  border-radius: 22px;
+  background: rgba(8, 24, 40, 0.98);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+.brand-name {
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.brand-by {
+  margin-top: 7px;
+  color: #91a6bb;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+
+.brand.compact .brand-name {
+  font-size: 21px;
+}
+
+.brand.compact .brand-by {
+  font-size: 7px;
+  margin-top: 4px;
+}
+
+.eyebrow {
+  margin: 30px 0 9px;
+  color: #78b6f5;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.08;
+}
+
+.muted {
+  color: #9db1c5;
+  line-height: 1.65;
+}
+
+label {
+  display: block;
+  margin: 26px 0 8px;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #36536e;
+  border-radius: 10px;
+  background: #071827;
+  color: #e9f0f8;
+}
+
+.primary {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  border: 0;
+  border-radius: 10px;
+  background: #2f83ee;
+  color: white;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.primary:hover {
+  filter: brightness(1.08);
+}
+
+.primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.development-note {
+  margin: 18px 0 0;
+  color: #71879d;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 28px;
+  border-bottom: 1px solid #1d344c;
+  background: #081728;
+}
+
+.topbar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.role {
+  padding: 7px 11px;
+  border: 1px solid #315474;
+  border-radius: 999px;
+  color: #a4c8eb;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.secondary {
+  padding: 8px 12px;
+  border: 1px solid #315474;
+  border-radius: 8px;
+  background: transparent;
+  color: #b7c7d9;
+  cursor: pointer;
+}
+
+.secondary:hover {
+  border-color: #3b82f6;
+  color: #eaf4ff;
+}
+
+.hero {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 58px 28px 28px;
+}
+
+.grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 18px 28px 64px;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(230px, 1fr)
+  );
+  gap: 16px;
+}
+
+.card {
+  min-height: 185px;
+  padding: 22px;
+  border: 1px solid #203d58;
+  border-radius: 16px;
+  background: #091a2b;
+}
+
+.card-icon {
+  color: #73b4f2;
+  font-size: 20px;
+}
+
+.card h2 {
+  margin: 12px 0 8px;
+  font-size: 19px;
+}
+
+.card p {
+  color: #8fa5bb;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 10px;
+  color: #6e8aa5;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #36536e;
+  border-radius: 10px;
+  background: #071827;
+  color: #e9f0f8;
+  outline: none;
+}
+
+input:focus {
+  border-color: #2f83ee;
+}
+
+input::placeholder {
+  color: #61758a;
+}
+
+.login-error {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid #743e47;
+  border-radius: 10px;
+  background: #2a1118;
+  color: #ffb1bb;
+  font-size: 13px;
+}
+
+.signup-success {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid #37644e;
+  border-radius: 10px;
+  background: #0d261b;
+  color: #9fe0bb;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.account-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.account-summary span {
+  padding: 7px 11px;
+  border: 1px solid #315474;
+  border-radius: 999px;
+  color: #a4c8eb;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.account-state {
+  margin: 24px 0;
+  padding: 12px 14px;
+  border: 1px solid #36536e;
+  border-radius: 10px;
+  background: #071827;
+  color: #a4c8eb;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.auth-switch {
+  margin-top: 12px;
+}
+
+.clickable-card {
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.clickable-card:hover {
+  transform: translateY(-3px);
+  border-color: #3b82f6;
+}
+
+/* =========================================================
+   ADMIN ACCOUNTS
+   ========================================================= */
+
+.admin-page {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 70px 0 100px;
+}
+
+.admin-page h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: clamp(36px, 5vw, 58px);
+}
+
+.back-button {
+  margin-bottom: 36px;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+  margin-bottom: 34px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 20px;
+  border: 1px solid #274661;
+  border-radius: 14px;
+  background: #081c2c;
+  color: #dbeafe;
+  cursor: pointer;
+  text-align: left;
+}
+
+.stat-card strong {
+  font-size: 30px;
+}
+
+.stat-card span {
+  color: #7eb4df;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stat-card.active {
+  border-color: #3b82f6;
+}
+
+.admin-error {
+  margin-bottom: 22px;
+}
+
+.admin-empty {
+  padding: 40px;
+  border: 1px dashed #31516b;
+  border-radius: 14px;
+  color: #84a9c7;
+  text-align: center;
+}
+
+.user-list {
+  display: grid;
+  gap: 18px;
+}
+
+.user-card {
+  padding: 24px;
+  border: 1px solid #274661;
+  border-radius: 16px;
+  background: #081c2c;
+}
+
+.user-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.user-name {
+  color: #f1f5f9;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.user-email {
+  margin-top: 5px;
+  color: #7eb4df;
+  font-size: 14px;
+}
+
+.account-badge {
+  padding: 6px 10px;
+  border: 1px solid #36536e;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.account-badge.pending {
+  border-color: #806628;
+  color: #f6d365;
+}
+
+.account-badge.approved {
+  border-color: #31684b;
+  color: #84e1ad;
+}
+
+.account-badge.rejected {
+  border-color: #7a3d48;
+  color: #ff9eaa;
+}
+
+.user-meta {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+  padding: 18px 0;
+  border-top: 1px solid #17384f;
+  border-bottom: 1px solid #17384f;
+}
+
+.user-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.user-meta span {
+  color: #698da9;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.user-meta strong {
+  color: #dceaf7;
+  font-size: 14px;
+}
+
+.approval-panel {
+  margin-top: 22px;
+}
+
+.approval-panel label,
+.reject-section label {
+  display: block;
+  margin-bottom: 8px;
+  color: #dceaf7;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.approval-panel select {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 13px 14px;
+  border: 1px solid #36536e;
+  border-radius: 10px;
+  background: #071827;
+  color: #e9f0f8;
+}
+
+.approval-panel .primary {
+  width: 100%;
+}
+
+.reject-section {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid #17384f;
+}
+
+textarea {
+  width: 100%;
+  min-height: 95px;
+  padding: 13px 14px;
+  border: 1px solid #36536e;
+  border-radius: 10px;
+  background: #071827;
+  color: #e9f0f8;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #3b82f6;
+}
+
+.danger-button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 13px 16px;
+  border: 1px solid #763d49;
+  border-radius: 10px;
+  background: #2b1118;
+  color: #ffadb7;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.danger-button:hover {
+  background: #37151e;
+}
+
+.danger-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.rejection-display {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #663b43;
+  border-radius: 10px;
+  background: #251116;
+}
+
+.rejection-display strong {
+  color: #ffadb7;
+}
+
+.rejection-display p {
+  margin-bottom: 0;
+  color: #d9a6ad;
+}
+
+/* =========================================================
+   BOOKINGS
+   ========================================================= */
+
+.bookings-page {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 70px 0 100px;
+}
+
+.bookings-page > h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: clamp(36px, 5vw, 58px);
+}
+
+.booking-message {
+  margin-top: 24px;
+}
+
+.booking-form-card {
+  margin-top: 36px;
+  padding: 26px;
+  border: 1px solid #274661;
+  border-radius: 16px;
+  background: #081c2c;
+}
+
+.booking-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.booking-section-heading h2 {
+  margin-top: 7px;
+  margin-bottom: 0;
+}
+
+.booking-form {
+  margin-top: 26px;
+}
+
+.booking-field {
+  margin-bottom: 18px;
+}
+
+.booking-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: #dceaf7;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.booking-field select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #36536e;
+  border-radius: 10px;
+  background: #071827;
+  color: #e9f0f8;
+}
+
+.booking-time-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.field-note {
+  margin-top: 8px;
+  color: #6f93ad;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.booking-submit {
+  width: 100%;
+}
+
+.booking-history-section {
+  margin-top: 42px;
+}
+
+.booking-count {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #36536e;
+  border-radius: 999px;
+  color: #a9d3f5;
+  font-weight: 900;
+}
+
+.student-booking-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.student-booking-card {
+  padding: 24px;
+  border: 1px solid #274661;
+  border-radius: 16px;
+  background: #081c2c;
+}
+
+.student-booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.student-booking-header h3 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: 20px;
+}
+
+.student-booking-header p {
+  margin: 6px 0 0;
+  color: #7197b4;
+  font-size: 13px;
+}
+
+.booking-status {
+  padding: 6px 10px;
+  border: 1px solid #36536e;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+}
+
+.booking-status.requested {
+  border-color: #806628;
+  color: #f6d365;
+}
+
+.booking-status.approved {
+  border-color: #31684b;
+  color: #84e1ad;
+}
+
+.booking-status.rejected {
+  border-color: #7a3d48;
+  color: #ff9eaa;
+}
+
+.booking-status.cancelled {
+  border-color: #536372;
+  color: #a9bac9;
+}
+
+.booking-status.completed {
+  border-color: #35628a;
+  color: #8bc7fa;
+}
+
+.booking-details-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+  padding: 18px 0;
+  border-top: 1px solid #17384f;
+  border-bottom: 1px solid #17384f;
+}
+
+.booking-details-grid div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.booking-details-grid span {
+  color: #698da9;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.booking-details-grid strong {
+  color: #dceaf7;
+  font-size: 14px;
+}
+
+.booking-note,
+.booking-rejection {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #071827;
+}
+
+.booking-note {
+  border: 1px solid #29465c;
+}
+
+.booking-rejection {
+  border: 1px solid #663b43;
+  background: #251116;
+}
+
+.booking-note strong,
+.booking-rejection strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.booking-note p,
+.booking-rejection p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.booking-note p {
+  color: #9bb6ca;
+}
+
+.booking-rejection strong,
+.booking-rejection p {
+  color: #e9a6af;
+}
+
+.booking-lock-note {
+  margin-top: 18px;
+  color: #7197b4;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   INSTRUCTOR BOOKING MANAGEMENT
+   ========================================================= */
+
+.booking-filter-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 34px;
+  margin-bottom: 28px;
+}
+
+.booking-filter-card {
+  padding: 18px;
+  border: 1px solid #274661;
+  border-radius: 12px;
+  background: #081c2c;
+  color: #dceaf7;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    transform 0.18s ease;
+}
+
+.booking-filter-card:hover {
+  border-color: #368cf0;
+  background: #0a2238;
+  transform: translateY(-2px);
+}
+
+.booking-filter-card.active {
+  border-color: #368cf0;
+  background: #0b2740;
+}
+
+.booking-filter-card strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.booking-filter-card span {
+  color: #789db8;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.booking-filter-card.active span {
+  color: #9cccfa;
+}
+
+.instructor-booking-details {
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+}
+
+.instructor-approval-panel {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #2d4d67;
+  border-radius: 12px;
+  background: #071827;
+}
+
+.instructor-approval-panel .eyebrow {
+  margin-top: 0;
+}
+
+.instructor-approval-panel h4 {
+  margin: 7px 0 20px;
+  color: #f1f5f9;
+  font-size: 18px;
+}
+
+.instructor-approval-panel
+.booking-time-grid {
+  margin-bottom: 4px;
+}
+
+.instructor-approval-panel
+.booking-field {
+  margin-bottom: 10px;
+}
+
+.instructor-action-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.instructor-action-grid .primary,
+.instructor-action-grid
+.danger-button {
+  margin-top: 0;
+}
+
+.approved-details {
+  margin-bottom: 18px;
+}
+
+.student-booking-card
+> .danger-button {
+  margin-top: 18px;
+}
+
+/* =========================================================
+   TIMETABLE
+   ========================================================= */
+
+.timetable-page {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 70px 0 100px;
+}
+
+.timetable-page > h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: clamp(36px, 5vw, 58px);
+}
+
+.timetable-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-top: 34px;
+  padding: 18px;
+  border: 1px solid #274661;
+  border-radius: 14px;
+  background: #081c2c;
+}
+
+.timetable-date-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timetable-nav-button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  font-size: 18px;
+}
+
+.timetable-today-button {
+  min-width: 84px;
+  height: 42px;
+}
+
+.timetable-date-input {
+  width: auto;
+  min-width: 175px;
+}
+
+.timetable-date-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-top: 34px;
+  margin-bottom: 20px;
+}
+
+.timetable-date-heading .eyebrow {
+  margin-top: 0;
+}
+
+.timetable-date-heading h2 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: clamp(24px, 4vw, 34px);
+}
+
+.timetable-count {
+  padding: 8px 12px;
+  border: 1px solid #36536e;
+  border-radius: 999px;
+  color: #a9d3f5;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.timetable-list {
+  display: grid;
+  gap: 16px;
+}
+
+.timetable-card {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  border: 1px solid #274661;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #081c2c;
+}
+
+.timetable-time-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  padding: 24px 16px;
+  border-right: 1px solid #274661;
+  background: #071827;
+}
+
+.timetable-time-column strong {
+  color: #f1f5f9;
+  font-size: 21px;
+}
+
+.timetable-time-column span {
+  margin-top: 7px;
+  color: #7393ac;
+  font-size: 13px;
+}
+
+.timetable-time-column span::before {
+  content: "to ";
+}
+
+.timetable-card-main {
+  padding: 24px;
+}
+
+.timetable-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.timetable-card-header h3 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: 21px;
+}
+
+.timetable-card-header p {
+  margin: 6px 0 0;
+  color: #7197b4;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.timetable-detail-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+  padding: 18px 0;
+  border-top: 1px solid #17384f;
+  border-bottom: 1px solid #17384f;
+}
+
+.timetable-detail-grid div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.timetable-detail-grid span {
+  color: #698da9;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.timetable-detail-grid strong {
+  color: #dceaf7;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.timetable-purpose {
+  margin-top: 18px;
+}
+
+.timetable-requested-note,
+.timetable-approved-note {
+  margin-top: 16px;
+  padding: 11px 13px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.timetable-requested-note {
+  border: 1px solid #6d5928;
+  background: #241e0d;
+  color: #e5c962;
+}
+
+.timetable-approved-note {
+  border: 1px solid #315e47;
+  background: #0d2419;
+  color: #91d8ae;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .booking-filter-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .instructor-booking-details {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .timetable-detail-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-page,
+  .bookings-page,
+  .timetable-page {
+    width: min(100% - 28px, 1180px);
+    padding-top: 38px;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .user-card-header,
+  .student-booking-header {
+    flex-direction: column;
+  }
+
+  .user-meta,
+  .booking-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-time-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timetable-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .timetable-date-controls {
+    width: 100%;
+  }
+
+  .timetable-today-button {
+    flex: 1;
+  }
+
+  .timetable-date-input {
+    width: 100%;
+  }
+
+  .timetable-card {
+    grid-template-columns: 1fr;
+  }
+
+  .timetable-time-column {
+    min-height: auto;
+    align-items: flex-start;
+    padding: 16px 20px;
+    border-right: 0;
+    border-bottom: 1px solid #274661;
+  }
+
+  .timetable-time-column {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .timetable-time-column span {
+    margin-top: 0;
+  }
+
+  .timetable-card-header,
+  .timetable-date-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 620px) {
+  .login-card {
+    padding: 28px;
+  }
+
+  .topbar {
+    padding: 14px 18px;
+  }
+
+  .hero,
+  .grid {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .role {
+    display: none;
+  }
+}
+
+/* UI REDESIGN R3 — SESSIONS + TRAINING HISTORY */
+
+.sessions-redesign-page .sessions-page > .back-button,
+.training-history-redesign-page .training-history-page > .back-button {
+  display: none;
+}
+
+.sessions-page-heading,
+.training-history-heading {
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.sessions-page-heading h1,
+.training-history-heading h1 {
+  margin: 7px 0;
+  font-size: clamp(38px, 5vw, 58px);
+  letter-spacing: -0.045em;
+}
+
+.sessions-page-heading p,
+.training-history-heading p {
+  max-width: 720px;
+  margin: 0;
+}
+
+.sessions-control-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border: 1px solid rgba(74, 151, 112, 0.35);
+  border-radius: 999px;
+  background: rgba(31, 105, 68, 0.14);
+  color: #85c9a6;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.session-status-tabs {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 24px;
+}
+
+.session-status-tabs .stat-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  padding: 15px 18px;
+  border-radius: 13px;
+  text-align: left;
+}
+
+.session-status-tabs .stat-card strong {
+  font-size: 24px;
+}
+
+.session-status-tabs .stat-card span {
+  font-size: 10px;
+  letter-spacing: 0.07em;
+}
+
+.sessions-page .student-booking-list {
+  gap: 14px;
+}
+
+.session-operations-card {
+  position: relative;
+  overflow: hidden;
+  padding: 22px 24px !important;
+  border-color: rgba(70, 124, 165, 0.32) !important;
+  border-radius: 15px !important;
+  background: linear-gradient(110deg, rgba(9, 31, 49, 0.97), rgba(7, 23, 38, 0.91)) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.14);
+}
+
+.session-operations-card::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: #47657c;
+  content: "";
+}
+
+.session-operations-card.status-in_progress::before,
+.ready-session-card::before {
+  background: #4ba7f5;
+  box-shadow: 0 0 18px rgba(75, 167, 245, 0.5);
+}
+
+.session-operations-card.status-completed::before {
+  background: #51b47f;
+}
+
+.session-operations-card.status-cancelled::before {
+  background: #d65c66;
+}
+
+.session-operations-card .student-booking-header {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(74, 125, 166, 0.2);
+}
+
+.session-operations-card .student-booking-header h3 {
+  margin-bottom: 5px;
+  font-size: 21px;
+}
+
+.session-operations-card .booking-details-grid {
+  gap: 18px;
+  margin-top: 17px;
+}
+
+.session-operations-card .booking-details-grid .muted {
+  display: block;
+  margin-bottom: 4px;
+  color: #6f91aa;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.session-operations-card .booking-details-grid strong {
+  color: #dceaf5;
+  font-size: 13px;
+}
+
+.ready-session-card > .primary {
+  min-height: 45px;
+  margin-top: 18px;
+  border-radius: 10px;
+}
+
+.session-review-panel {
+  margin-top: 22px !important;
+  padding: 22px !important;
+  border-color: rgba(66, 142, 200, 0.32) !important;
+  border-radius: 13px !important;
+  background: rgba(5, 20, 34, 0.72) !important;
+}
+
+.session-review-panel label {
+  display: block;
+  margin: 15px 0 6px;
+  color: #86a8c2;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.session-review-panel label:first-child {
+  margin-top: 0;
+}
+
+.session-review-panel input,
+.session-review-panel select,
+.session-review-panel textarea {
+  border-color: rgba(76, 132, 174, 0.48);
+  background: rgba(5, 16, 29, 0.78);
+}
+
+.session-review-panel textarea {
+  min-height: 104px;
+}
+
+.training-history-print {
+  flex: 0 0 auto;
+  min-height: 43px;
+  padding-inline: 16px;
+}
+
+.training-history-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(74, 125, 166, 0.26);
+  border-radius: 14px;
+  background: rgba(7, 24, 39, 0.75);
+}
+
+.training-history-summary > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 66px;
+  padding: 14px 17px;
+  border-right: 1px solid rgba(74, 125, 166, 0.2);
+}
+
+.training-history-summary > div:last-child {
+  border-right: 0;
+}
+
+.training-history-summary span {
+  color: #7795ac;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.training-history-summary strong {
+  color: #eaf4fb;
+  font-size: 22px;
+}
+
+.training-history-tabs {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 0;
+}
+
+.training-history-tabs .stat-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 10px 15px;
+  border-radius: 11px;
+}
+
+.training-history-tabs .stat-card strong {
+  font-size: 17px;
+}
+
+.training-history-tabs .stat-card span {
+  font-size: 10px;
+  letter-spacing: 0.07em;
+}
+
+.training-student-filter {
+  display: grid;
+  grid-template-columns: auto minmax(220px, 1fr);
+  align-items: center;
+  gap: 16px;
+  padding: 15px 18px !important;
+  border-radius: 12px !important;
+  background: rgba(8, 27, 43, 0.76) !important;
+}
+
+.training-student-filter label {
+  margin: 0;
+  color: #7fa0b8;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.programme-progress-panel {
+  margin-top: 16px;
+  padding: 20px 22px !important;
+  border-color: rgba(75, 151, 111, 0.3) !important;
+  background: linear-gradient(110deg, rgba(13, 48, 43, 0.46), rgba(8, 27, 42, 0.88)) !important;
+}
+
+.programme-progress-panel h2 {
+  margin: 0 0 15px;
+  font-size: 18px;
+}
+
+.training-history-page .student-booking-list {
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.training-record-card {
+  position: relative;
+  overflow: hidden;
+  padding: 22px 24px !important;
+  border-color: rgba(70, 124, 165, 0.32) !important;
+  border-radius: 15px !important;
+  background: linear-gradient(110deg, rgba(9, 31, 49, 0.97), rgba(7, 23, 38, 0.91)) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.14);
+}
+
+.training-record-card::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: #4ba7f5;
+  content: "";
+}
+
+.training-record-card.mode-flight::before {
+  background: #55b889;
+}
+
+.training-record-card .student-booking-header {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(74, 125, 166, 0.2);
+}
+
+.training-record-card .student-booking-header h3 {
+  margin-bottom: 4px;
+  font-size: 20px;
+}
+
+.training-record-card .status {
+  display: inline-flex;
+  margin-top: 9px;
+  padding: 5px 8px;
+  border: 1px solid rgba(77, 145, 198, 0.35);
+  border-radius: 7px;
+  background: rgba(42, 115, 170, 0.12);
+  color: #8cc8f5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.training-record-card.mode-flight .status {
+  border-color: rgba(77, 164, 120, 0.35);
+  background: rgba(42, 132, 88, 0.12);
+  color: #8ed2af;
+}
+
+.training-record-card .booking-details-grid {
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.training-record-card .booking-details-grid .muted {
+  display: block;
+  margin-bottom: 4px;
+  color: #6f91aa;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.training-record-card .booking-actions {
+  padding-top: 16px;
+  border-top: 1px solid rgba(74, 125, 166, 0.18);
+}
+
+@media (max-width: 820px) {
+  .session-status-tabs,
+  .training-history-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .training-history-summary > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .training-history-summary > div:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(74, 125, 166, 0.2);
+  }
+}
+
+/* FINAL REFERENCE OVERRIDES — kept last so the supplied visual direction wins */
+
+.aero-sidebar {
+  background: linear-gradient(180deg, #061526 0%, #07111f 100%);
+}
+
+.aero-sidebar-brand {
+  min-height: 116px;
+  justify-content: center;
+  padding: 10px 12px 18px;
+}
+
+.aero-sidebar-brand .aero-brand-lockup {
+  width: 100%;
+}
+
+.aero-nav-item.active {
+  border-color: rgba(27, 132, 255, 0.55);
+  background: linear-gradient(90deg, #086ad4, #0754aa);
+  box-shadow: 0 7px 20px rgba(0, 93, 205, 0.25);
+  color: #fff;
+}
+
+.aero-nav-item.active::before {
+  display: none;
+}
+
+.aero-avatar {
+  border-radius: 50%;
+}
+
+.aero-mobile-wing,
+.aero-mobile-deck-brand,
+.aero-mobile-quick-actions {
+  display: none;
+}
+
+.aero-auth {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 100dvh;
+  overflow: hidden;
+  padding: clamp(28px, 5vw, 72px);
+  background: #07111f;
+}
+
+.aero-auth-visual {
+  position: absolute;
+  inset: 0;
+  display: block;
+  min-height: 100%;
+  padding: clamp(28px, 5vw, 70px);
+  background: #0a1726 url("/bristell-sunset-hero-v2.png") center center / cover no-repeat;
+}
+
+.aero-auth-visual::before {
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(3, 12, 24, 0.58), rgba(3, 12, 24, 0.08) 58%),
+    linear-gradient(0deg, rgba(3, 12, 24, 0.68), transparent 56%);
+}
+
+.aero-auth-visual > .aero-brand-lockup {
+  position: relative;
+  z-index: 2;
+  width: 310px;
+}
+
+.aero-auth-visual-copy {
+  bottom: clamp(42px, 7vw, 92px);
+  max-width: 590px;
+}
+
+.aero-auth-visual-copy .eyebrow {
+  display: none;
+}
+
+.aero-auth-card {
+  position: relative;
+  z-index: 3;
+  width: min(420px, 40vw);
+  min-height: 0;
+  padding: 34px;
+  border: 1px solid rgba(115, 167, 223, 0.44);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(11, 31, 55, 0.93), rgba(7, 21, 40, 0.88));
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.aero-auth-card > .eyebrow,
+.aero-auth-mobile-brand {
+  display: none;
+}
+
+.aero-auth-card h2,
+.aero-auth-card > .muted {
+  text-align: center;
+}
+
+.aero-auth-card h2 {
+  margin-top: 0;
+}
+
+.aero-auth-card input {
+  border-color: rgba(93, 148, 207, 0.48);
+  background: rgba(8, 29, 54, 0.78);
+}
+
+.aero-auth-card .primary {
+  background: linear-gradient(180deg, #1684ff, #0866d9);
+  box-shadow: 0 10px 28px rgba(0, 105, 230, 0.34);
+}
+
+@media (max-width: 920px) {
+  .aero-sidebar {
+    width: min(292px, 86vw);
+    padding-top: 12px;
+  }
+
+  .aero-sidebar-brand {
+    min-height: 122px;
+    padding-right: 48px;
+  }
+
+  .aero-sidebar-nav {
+    gap: 12px;
+    padding-top: 12px;
+  }
+
+  .aero-nav-group {
+    gap: 3px;
+  }
+
+  .aero-nav-group h2,
+  .aero-utility-context > div,
+  .aero-profile-control {
+    display: none;
+  }
+
+  .aero-nav-item {
+    min-height: 42px;
+  }
+
+  .aero-utility-bar {
+    min-height: 62px;
+    padding-inline: 18px;
+  }
+
+  .aero-mobile-wing {
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 116px;
+    transform: translateX(-50%);
+  }
+
+  .aero-icon-button,
+  .aero-mobile-menu {
+    width: 38px;
+    height: 38px;
+    border-color: transparent;
+    background: transparent;
+  }
+
+  .aero-mobile-nav {
+    min-height: 68px;
+    border-color: #173451;
+    background: rgba(4, 18, 33, 0.98);
+  }
+
+  .aero-mobile-nav button.active {
+    background: transparent;
+    color: #1694ff;
+  }
+
+  .aero-auth {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 100svh;
+    overflow: auto;
+    padding: 18px;
+  }
+
+  .aero-auth-visual {
+    display: block;
+    background-position: 50% center;
+  }
+
+  .aero-auth-visual::before {
+    background: linear-gradient(0deg, rgba(3, 12, 24, 0.72), rgba(3, 12, 24, 0.06) 74%);
+  }
+
+  .aero-auth-visual > .aero-brand-lockup {
+    width: 100%;
+    margin: 16px auto 0;
+  }
+
+  .aero-auth-visual > .aero-brand-lockup .aero-wing-wordmark {
+    width: 190px;
+  }
+
+  .aero-auth-visual > .aero-brand-lockup .aero-lockup-name {
+    font-size: 34px;
+  }
+
+  .aero-auth-visual-copy {
+    display: none;
+  }
+
+  .aero-auth-card {
+    width: min(100%, 390px);
+    min-height: 0;
+    margin-top: min(54vh, 460px);
+    padding: 22px;
+    border-left: 1px solid rgba(115, 167, 223, 0.44);
+    border-radius: 18px;
+  }
+
+  .flight-deck-page .aero-page-hero {
+    gap: 10px;
+    padding-top: 24px;
+  }
+
+  .aero-mobile-deck-brand {
+    display: grid;
+    margin-bottom: 12px;
+  }
+
+  .aero-mobile-deck-brand strong {
+    font-size: 25px;
+    letter-spacing: -0.05em;
+  }
+
+  .aero-mobile-deck-brand strong span {
+    color: #3098ff;
+  }
+
+  .aero-mobile-deck-brand small {
+    color: #c6d2df;
+    font-size: 11px;
+  }
+
+  .flight-deck-page .aero-page-hero .eyebrow,
+  .flight-deck-page .aero-page-hero .muted,
+  .flight-deck-page .aero-capability-line,
+  .flight-deck-page .aero-heading-aside {
+    display: none;
+  }
+
+  .flight-deck-page .aero-page-hero h1 {
+    margin: 0;
+    font-size: 17px;
+    letter-spacing: -0.015em;
+  }
+
+  .flight-deck-page .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .flight-deck-page .stat-card {
+    min-height: 86px;
+    border-radius: 10px;
+  }
+
+  .flight-deck-page .stat-card:nth-child(1) { background: linear-gradient(145deg, #0a3d73, #08294e); }
+  .flight-deck-page .stat-card:nth-child(2) { background: linear-gradient(145deg, #075d56, #063a38); }
+  .flight-deck-page .stat-card:nth-child(3) { background: linear-gradient(145deg, #5b3515, #38230f); }
+  .flight-deck-page .stat-card:nth-child(4) { background: linear-gradient(145deg, #3e3074, #28204e); }
+  .flight-deck-page .stat-card:nth-child(5) { display: none; }
+
+  .aero-mobile-quick-actions {
+    display: block;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #1f4261;
+  }
+
+  .aero-mobile-quick-actions h2 {
+    margin: 0 0 11px;
+    font-size: 15px;
+  }
+
+  .aero-mobile-quick-actions > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+  }
+
+  .aero-mobile-quick-actions button {
+    display: grid;
+    place-items: center;
+    min-height: 70px;
+    gap: 6px;
+    border: 1px solid #234664;
+    border-radius: 9px;
+    background: #081b2e;
+    color: #e5eef8;
+    cursor: pointer;
+    font-size: 11px;
+  }
+
+  .aero-mobile-quick-actions button:nth-child(2) {
+    color: #18a0ff;
+  }
+}
+
+/* REFERENCE-LED AEROVIATION INTERFACE */
+
+.aero-wing-wordmark {
+  position: relative;
+  display: block;
+  width: 190px;
+  aspect-ratio: 3.85 / 1;
+}
+
+.aero-wing-wordmark img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.aero-wing-text {
+  clip-path: inset(25% 17% 25% 17%);
+  filter: brightness(0) invert(1);
+}
+
+.aero-brand-lockup {
+  display: grid;
+  justify-items: center;
+  color: #f4f8ff;
+  text-align: center;
+}
+
+.aero-lockup-name {
+  display: inline-block;
+  width: max-content;
+  margin-top: 8px;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+}
+
+.aero-lockup-name span {
+  color: #3295ff;
+}
+
+.aero-brand-lockup small {
+  margin-top: 5px;
+  color: #d3ddeb;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+
+.aero-brand-lockup p {
+  margin: 13px 0 0;
+  color: #d8e1ed;
+  font-size: 15px;
+}
+
+.aero-brand-lockup.compact .aero-wing-wordmark {
+  width: 155px;
+}
+
+.aero-brand-lockup.compact .aero-lockup-name {
+  margin-top: 3px;
+  font-size: 25px;
+}
+
+.aero-brand-lockup.compact small {
+  margin-top: 2px;
+  font-size: 10px;
+}
+
+.aero-sidebar {
+  background: linear-gradient(180deg, #061526 0%, #07111f 100%);
+}
+
+.aero-sidebar-brand {
+  min-height: 116px;
+  justify-content: center;
+  padding: 10px 12px 18px;
+}
+
+.aero-sidebar-brand .aero-brand-lockup {
+  width: 100%;
+}
+
+.aero-nav-item.active {
+  border-color: rgba(27, 132, 255, 0.55);
+  background: linear-gradient(90deg, #086ad4, #0754aa);
+  box-shadow: 0 7px 20px rgba(0, 93, 205, 0.25);
+  color: #fff;
+}
+
+.aero-nav-item.active::before {
+  display: none;
+}
+
+.aero-avatar {
+  border-radius: 50%;
+}
+
+.aero-mobile-wing {
+  display: none;
+}
+
+.aero-module-emblem.bare {
+  color: #dceaff;
+}
+
+.clickable-card .aero-module-emblem.bare {
+  margin-bottom: 8px;
+}
+
+.aero-mobile-deck-brand,
+.aero-mobile-quick-actions {
+  display: none;
+}
+
+/* Full-screen sign in */
+
+.aero-auth {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 100dvh;
+  overflow: hidden;
+  padding: clamp(28px, 5vw, 72px);
+  background: #07111f;
+}
+
+.aero-auth-visual {
+  position: absolute;
+  inset: 0;
+  display: block;
+  min-height: 100%;
+  padding: clamp(28px, 5vw, 70px);
+  background-position: center center;
+}
+
+.aero-auth-visual::before {
+  background:
+    linear-gradient(90deg, rgba(3, 12, 24, 0.58), rgba(3, 12, 24, 0.08) 58%),
+    linear-gradient(0deg, rgba(3, 12, 24, 0.68), transparent 56%);
+}
+
+.aero-auth-visual > .aero-brand-lockup {
+  position: relative;
+  z-index: 2;
+  width: 310px;
+}
+
+.aero-auth-visual-copy {
+  bottom: clamp(42px, 7vw, 92px);
+  max-width: 590px;
+}
+
+.aero-auth-visual-copy .eyebrow {
+  display: none;
+}
+
+.aero-auth-visual-copy h1 {
+  max-width: 560px;
+  font-size: clamp(38px, 4.4vw, 62px);
+}
+
+.aero-auth-card {
+  position: relative;
+  z-index: 3;
+  width: min(420px, 40vw);
+  min-height: 0;
+  padding: 34px;
+  border: 1px solid rgba(115, 167, 223, 0.44);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(11, 31, 55, 0.93), rgba(7, 21, 40, 0.88));
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.aero-auth-card > .eyebrow {
+  display: none;
+}
+
+.aero-auth-card h2,
+.aero-auth-card > .muted {
+  text-align: center;
+}
+
+.aero-auth-card h2 {
+  margin-top: 0;
+  font-size: 25px;
+}
+
+.aero-auth-card label {
+  color: #c8d5e4;
+}
+
+.aero-auth-card input {
+  border-color: rgba(93, 148, 207, 0.48);
+  background: rgba(8, 29, 54, 0.78);
+}
+
+.aero-auth-card .primary {
+  background: linear-gradient(180deg, #1684ff, #0866d9);
+  box-shadow: 0 10px 28px rgba(0, 105, 230, 0.34);
+}
+
+.aero-auth-mobile-brand {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  .aero-sidebar {
+    width: min(292px, 86vw);
+    padding-top: 12px;
+  }
+
+  .aero-sidebar-brand {
+    min-height: 122px;
+    padding-right: 48px;
+  }
+
+  .aero-sidebar-nav {
+    gap: 12px;
+    padding-top: 12px;
+  }
+
+  .aero-nav-group {
+    gap: 3px;
+  }
+
+  .aero-nav-group h2 {
+    display: none;
+  }
+
+  .aero-nav-item {
+    min-height: 42px;
+  }
+
+  .aero-utility-bar {
+    position: sticky;
+    min-height: 62px;
+    padding-inline: 18px;
+  }
+
+  .aero-utility-context > div,
+  .aero-profile-control {
+    display: none;
+  }
+
+  .aero-mobile-wing {
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 116px;
+    transform: translateX(-50%);
+  }
+
+  .aero-icon-button,
+  .aero-mobile-menu {
+    width: 38px;
+    height: 38px;
+    border-color: transparent;
+    background: transparent;
+  }
+
+  .aero-mobile-nav {
+    min-height: 68px;
+    border-color: #173451;
+    background: rgba(4, 18, 33, 0.98);
+  }
+
+  .aero-mobile-nav button.active {
+    background: transparent;
+    color: #1694ff;
+  }
+
+  .aero-auth {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 100svh;
+    overflow: auto;
+    padding: 18px;
+  }
+
+  .aero-auth-visual {
+    display: block;
+    background-position: 52% center;
+  }
+
+  .aero-auth-visual::before {
+    background: linear-gradient(0deg, rgba(3, 12, 24, 0.72), rgba(3, 12, 24, 0.08) 74%);
+  }
+
+  .aero-auth-visual > .aero-brand-lockup {
+    width: 100%;
+    margin: 16px auto 0;
+  }
+
+  .aero-auth-visual > .aero-brand-lockup .aero-wing-wordmark {
+    width: 190px;
+  }
+
+  .aero-auth-visual > .aero-brand-lockup .aero-lockup-name {
+    font-size: 34px;
+  }
+
+  .aero-auth-visual-copy {
+    display: none;
+  }
+
+  .aero-auth-card {
+    width: min(100%, 390px);
+    min-height: 0;
+    margin-top: min(54vh, 460px);
+    padding: 22px;
+    border-left: 1px solid rgba(115, 167, 223, 0.44);
+    border-radius: 18px;
+  }
+
+  .aero-auth-card h2 {
+    font-size: 21px;
+  }
+
+  .flight-deck-page .aero-page-hero {
+    gap: 10px;
+    padding-top: 24px;
+  }
+
+  .aero-mobile-deck-brand {
+    display: grid;
+    margin-bottom: 12px;
+  }
+
+  .aero-mobile-deck-brand strong {
+    font-size: 25px;
+    letter-spacing: -0.05em;
+  }
+
+  .aero-mobile-deck-brand strong span {
+    color: #3098ff;
+  }
+
+  .aero-mobile-deck-brand small {
+    margin-top: 1px;
+    color: #c6d2df;
+    font-size: 11px;
+  }
+
+  .flight-deck-page .aero-page-hero .eyebrow,
+  .flight-deck-page .aero-page-hero .muted,
+  .flight-deck-page .aero-capability-line,
+  .flight-deck-page .aero-heading-aside {
+    display: none;
+  }
+
+  .flight-deck-page .aero-page-hero h1 {
+    margin: 0;
+    font-size: 17px;
+    letter-spacing: -0.015em;
+  }
+
+  .flight-deck-page .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .flight-deck-page .stat-card {
+    min-height: 86px;
+    border-radius: 10px;
+  }
+
+  .flight-deck-page .stat-card:nth-child(1) {
+    background: linear-gradient(145deg, #0a3d73, #08294e);
+  }
+
+  .flight-deck-page .stat-card:nth-child(2) {
+    background: linear-gradient(145deg, #075d56, #063a38);
+  }
+
+  .flight-deck-page .stat-card:nth-child(3) {
+    background: linear-gradient(145deg, #5b3515, #38230f);
+  }
+
+  .flight-deck-page .stat-card:nth-child(4) {
+    background: linear-gradient(145deg, #3e3074, #28204e);
+  }
+
+  .flight-deck-page .stat-card:nth-child(5) {
+    display: none;
+  }
+
+  .aero-mobile-quick-actions {
+    display: block;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #1f4261;
+  }
+
+  .aero-mobile-quick-actions h2 {
+    margin: 0 0 11px;
+    font-size: 15px;
+  }
+
+  .aero-mobile-quick-actions > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+  }
+
+  .aero-mobile-quick-actions button {
+    display: grid;
+    place-items: center;
+    min-height: 70px;
+    gap: 6px;
+    border: 1px solid #234664;
+    border-radius: 9px;
+    background: #081b2e;
+    color: #e5eef8;
+    cursor: pointer;
+    font-size: 11px;
+  }
+
+  .aero-mobile-quick-actions button:nth-child(2) {
+    color: #18a0ff;
+  }
+}
+
+@media (max-width: 560px) {
+  .sessions-page-heading,
+  .training-history-heading {
+    align-items: flex-start;
+  }
+
+  .session-status-tabs {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .session-status-tabs .stat-card {
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 84px;
+  }
+
+  .training-history-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .training-history-summary > div,
+  .training-history-summary > div:nth-child(2) {
+    border-right: 0;
+    border-bottom: 1px solid rgba(74, 125, 166, 0.2);
+  }
+
+  .training-history-summary > div:last-child {
+    border-bottom: 0;
+  }
+
+  .training-student-filter {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .training-history-tabs .stat-card {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .session-operations-card,
+  .training-record-card {
+    padding: 18px !important;
+  }
+}
+
+/* UI REDESIGN R4 — PRE-FLIGHT WORKSPACE */
+
+.preflight-redesign-page .preflight-page > .back-button {
+  display: none;
+}
+
+.preflight-page-heading {
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.preflight-page-heading h1 {
+  margin: 7px 0;
+  font-size: clamp(38px, 5vw, 58px);
+  letter-spacing: -0.045em;
+}
+
+.preflight-page-heading p {
+  max-width: 720px;
+  margin: 0;
+}
+
+.preflight-control-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border: 1px solid rgba(74, 151, 112, 0.35);
+  border-radius: 999px;
+  background: rgba(31, 105, 68, 0.14);
+  color: #85c9a6;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.preflight-status-tabs {
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 9px;
+  margin: 0 0 24px;
+}
+
+.preflight-status-tabs .booking-filter-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 66px;
+  padding: 13px 16px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.preflight-status-tabs .booking-filter-card strong {
+  font-size: 22px;
+}
+
+.preflight-status-tabs .booking-filter-card span {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+.preflight-page .student-booking-list {
+  gap: 15px;
+}
+
+.preflight-card {
+  position: relative;
+  overflow: hidden;
+  padding: 22px 24px !important;
+  border-color: rgba(70, 124, 165, 0.32) !important;
+  border-radius: 15px !important;
+  background: linear-gradient(110deg, rgba(9, 31, 49, 0.97), rgba(7, 23, 38, 0.91)) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.14);
+}
+
+.preflight-card::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: #677f92;
+  content: "";
+}
+
+.preflight-card.preflight-submitted::before {
+  background: #4ba7f5;
+  box-shadow: 0 0 18px rgba(75, 167, 245, 0.45);
+}
+
+.preflight-card.preflight-accepted::before {
+  background: #51b47f;
+}
+
+.preflight-card.preflight-changes_requested::before {
+  background: #dc8a46;
+}
+
+.preflight-card .student-booking-header {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(74, 125, 166, 0.2);
+}
+
+.preflight-card .student-booking-header h3 {
+  margin-bottom: 5px;
+  font-size: 21px;
+}
+
+.preflight-card .booking-details-grid {
+  gap: 18px;
+  margin-top: 17px;
+}
+
+.preflight-card .booking-details-grid > div > span {
+  display: block;
+  margin-bottom: 4px;
+  color: #6f91aa;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.preflight-card .booking-details-grid > div > strong {
+  color: #dceaf5;
+  font-size: 13px;
+}
+
+.preflight-form-panel,
+.preflight-readonly-panel {
+  margin-top: 20px !important;
+  padding: 22px !important;
+  border-color: rgba(66, 142, 200, 0.32) !important;
+  border-radius: 13px !important;
+  background: rgba(5, 20, 34, 0.72) !important;
+}
+
+.preflight-form-panel h4,
+.preflight-readonly-panel h4 {
+  margin: 7px 0 18px;
+  color: #eef6fc;
+  font-size: 19px;
+}
+
+.preflight-form-panel .booking-field {
+  margin-top: 14px;
+}
+
+.preflight-form-panel .booking-field label {
+  margin-bottom: 6px;
+  color: #86a8c2;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.preflight-form-panel input,
+.preflight-form-panel textarea {
+  border-color: rgba(76, 132, 174, 0.48);
+  background: rgba(5, 16, 29, 0.78);
+}
+
+.preflight-form-panel textarea {
+  min-height: 96px;
+}
+
+.preflight-form-panel > .primary {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.preflight-readonly-panel .booking-note {
+  margin-top: 12px;
+  border-color: rgba(72, 124, 164, 0.28);
+  background: rgba(10, 34, 52, 0.52);
+}
+
+.preflight-readonly-panel .booking-lock-note {
+  margin-top: 16px;
+  border-color: rgba(74, 151, 112, 0.32);
+  background: rgba(31, 105, 68, 0.12);
+  color: #8dc9aa;
+}
+
+.preflight-card .instructor-action-grid {
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(74, 125, 166, 0.18);
+}
+
+@media (max-width: 700px) {
+  .preflight-page-heading {
+    align-items: flex-start;
+  }
+
+  .preflight-status-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .preflight-card {
+    padding: 18px !important;
+  }
+
+  .preflight-form-panel,
+  .preflight-readonly-panel {
+    padding: 17px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .preflight-status-tabs .booking-filter-card {
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 78px;
+  }
+}
+
+/* UI REDESIGN R5 — ACCOUNTS + PROGRAMME MANAGEMENT */
+
+.accounts-back-button.root {
+  display: none;
+}
+
+.accounts-back-button {
+  margin-bottom: 22px;
+}
+
+.accounts-page-heading {
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.accounts-page-heading h1 {
+  margin: 7px 0;
+  font-size: clamp(38px, 5vw, 58px);
+  letter-spacing: -0.045em;
+}
+
+.accounts-page-heading p {
+  max-width: 720px;
+  margin: 0;
+}
+
+.accounts-control-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border: 1px solid rgba(74, 151, 112, 0.35);
+  border-radius: 999px;
+  background: rgba(31, 105, 68, 0.14);
+  color: #85c9a6;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.account-status-tabs {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+  margin: 0 0 14px;
+}
+
+.account-status-tabs .stat-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+  padding: 14px 16px;
+  border-radius: 12px;
+}
+
+.account-status-tabs .stat-card strong {
+  font-size: 23px;
+}
+
+.account-status-tabs .stat-card span {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+.accounts-search-panel {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 18px !important;
+  padding: 15px 18px !important;
+  border-radius: 13px !important;
+  background: rgba(8, 27, 43, 0.78) !important;
+}
+
+.accounts-search-panel label {
+  color: #7fa0b8 !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.accounts-search-panel input {
+  width: 100%;
+  min-width: 0;
+}
+
+.accounts-admin-page .user-list {
+  gap: 13px;
+}
+
+.account-user-card {
+  position: relative;
+  overflow: hidden;
+  padding: 21px 23px !important;
+  border-color: rgba(70, 124, 165, 0.32) !important;
+  border-radius: 15px !important;
+  background: linear-gradient(110deg, rgba(9, 31, 49, 0.97), rgba(7, 23, 38, 0.91)) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.14);
+}
+
+.account-user-card::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: #4ba7f5;
+  content: "";
+}
+
+.account-user-card.account-pending::before {
+  background: #d8a844;
+}
+
+.account-user-card.account-suspended::before,
+.account-user-card.account-rejected::before {
+  background: #d65c66;
+}
+
+.account-user-card.account-archived::before {
+  background: #667d91;
+}
+
+.account-user-card .user-name {
+  font-size: 19px;
+}
+
+.account-user-card .user-email {
+  color: #789ab3;
+  font-size: 12px;
+}
+
+.account-status-badge {
+  padding: 6px 9px;
+  border: 1px solid rgba(75, 164, 120, 0.38);
+  border-radius: 999px;
+  background: rgba(42, 132, 88, 0.12);
+  color: #8ed2af;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+}
+
+.account-status-badge.status-pending {
+  border-color: rgba(204, 157, 53, 0.42);
+  background: rgba(133, 96, 20, 0.14);
+  color: #ecc975;
+}
+
+.account-status-badge.status-suspended,
+.account-status-badge.status-rejected {
+  border-color: rgba(213, 85, 98, 0.42);
+  background: rgba(116, 34, 45, 0.16);
+  color: #f39aa3;
+}
+
+.account-status-badge.status-archived {
+  border-color: rgba(112, 139, 161, 0.35);
+  background: rgba(63, 81, 98, 0.18);
+  color: #9dafbd;
+}
+
+.account-role-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.account-role-list span {
+  padding: 5px 8px;
+  border: 1px solid rgba(75, 139, 187, 0.3);
+  border-radius: 7px;
+  background: rgba(41, 107, 158, 0.1);
+  color: #8bbce0;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.account-programme-line {
+  display: flex;
+  gap: 9px;
+  margin: 13px 0 0;
+  color: #90a7b9;
+  font-size: 12px;
+}
+
+.account-programme-line strong {
+  color: #6f91aa;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.account-user-card .booking-actions {
+  margin-top: 16px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(74, 125, 166, 0.18);
+}
+
+.account-detail-tabs {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 18px;
+}
+
+.account-detail-tabs .stat-card {
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 10px;
+  border-radius: 11px;
+  text-align: center;
+}
+
+.account-detail-tabs .stat-card span {
+  font-size: 9px;
+  letter-spacing: 0.055em;
+}
+
+.account-profile-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 15px;
+}
+
+.account-profile-form h2,
+.account-profile-form > .primary {
+  grid-column: 1 / -1;
+}
+
+.account-profile-form h2,
+.account-role-panel h2,
+.programme-assignment-form h2,
+.programme-create-form h2,
+.account-controls-panel h2 {
+  margin: 0 0 18px;
+  font-size: 20px;
+}
+
+.account-profile-form > .primary {
+  min-height: 45px;
+  margin-top: 4px;
+}
+
+.account-role-panel,
+.account-controls-panel,
+.programme-assignment-form,
+.programme-create-form {
+  border-radius: 15px !important;
+  background: linear-gradient(110deg, rgba(9, 31, 49, 0.97), rgba(7, 23, 38, 0.91)) !important;
+}
+
+.account-role-panel .booking-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.programme-assignment-form,
+.programme-create-form {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.programme-assignment-form label,
+.programme-create-form label {
+  margin-top: 6px;
+  color: #86a8c2 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.04em;
+}
+
+.programme-assignment-form > .primary,
+.programme-create-form > .primary {
+  min-height: 45px;
+  margin-top: 10px;
+}
+
+.programme-assignment-card,
+.programme-catalogue-card,
+.account-progress-card {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 22px !important;
+  border-radius: 14px !important;
+}
+
+.programme-assignment-card::before,
+.programme-catalogue-card::before,
+.account-progress-card::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: #51b47f;
+  content: "";
+}
+
+.programme-assignment-card.inactive::before,
+.programme-catalogue-card.inactive::before {
+  background: #667d91;
+}
+
+.programme-hours-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.programme-hours-summary span {
+  display: grid;
+  gap: 3px;
+  padding: 10px 12px;
+  border: 1px solid rgba(74, 125, 166, 0.22);
+  border-radius: 9px;
+  background: rgba(5, 18, 31, 0.46);
+  color: #7894aa;
+  font-size: 10px;
+}
+
+.programme-hours-summary strong {
+  color: #dcebf6;
+  font-size: 14px;
+}
+
+.programme-progress-track {
+  height: 7px;
+  margin-top: 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(81, 108, 128, 0.28);
+}
+
+.programme-progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #338fd4, #55b889);
+}
+
+.account-progress-card .booking-details-grid {
+  margin-top: 15px;
+}
+
+.account-controls-panel {
+  border-color: rgba(193, 120, 72, 0.3) !important;
+}
+
+.account-controls-panel .booking-actions {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(155, 103, 69, 0.22);
+}
+
+@media (max-width: 900px) {
+  .account-status-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .account-detail-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .accounts-page-heading {
+    align-items: flex-start;
+  }
+
+  .account-status-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .accounts-search-panel,
+  .account-profile-form {
+    grid-template-columns: 1fr;
+  }
+
+  .account-profile-form h2,
+  .account-profile-form > .primary {
+    grid-column: auto;
+  }
+
+  .account-detail-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .programme-hours-summary,
+  .account-role-panel .booking-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .account-user-card {
+    padding: 18px !important;
+  }
+}
+
+/* BRAND REFINEMENT — SIDEBAR + LOADING */
+
+.aero-sidebar-brand {
+  gap: 11px;
+  padding-inline: 8px;
+}
+
+.aero-sidebar-brand .aero-brand-mark {
+  padding: 2px;
+  filter: drop-shadow(0 5px 12px rgba(190, 111, 79, 0.2));
+}
+
+.aero-sidebar-brand strong {
+  font-size: 20px;
+  letter-spacing: -0.035em;
+}
+
+.aero-sidebar-brand small {
+  margin-top: 2px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.aero-loading-screen {
+  background:
+    radial-gradient(circle at 50% 12%, rgba(35, 83, 124, 0.48), transparent 42%),
+    #06111f;
+}
+
+.aero-loading-card {
+  width: min(520px, 100%);
+  padding: 46px;
+  border-color: rgba(78, 134, 177, 0.5);
+  background: linear-gradient(145deg, rgba(10, 31, 49, 0.98), rgba(6, 20, 34, 0.98));
+}
+
+.aero-loading-card .brand {
+  display: grid;
+  justify-items: start;
+}
+
+.aero-loading-card .aeroviation-wordmark {
+  width: min(300px, 86%);
+  filter: brightness(0) invert(1);
+  opacity: 0.96;
+}
+
+.aero-loading-card .brand-name {
+  margin-top: 18px;
+  color: #f5f8fb;
+  font-size: 22px;
+  letter-spacing: -0.035em;
+}
+
+.aero-loading-card .brand-by {
+  color: #8ea9bd;
+}
+
+.aero-loading-copy {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 34px;
+  color: #9db4c6;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.aero-loading-indicator {
+  width: 9px;
+  height: 9px;
+  border: 2px solid rgba(255, 255, 255, 0.32);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: aero-loading-spin 0.8s linear infinite;
+}
+
+.aero-loading-card h1 {
+  margin-top: 11px;
+  color: #fff;
+  font-size: clamp(38px, 7vw, 52px);
+  letter-spacing: -0.045em;
+}
+
+@keyframes aero-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aero-loading-indicator {
+    animation: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .aero-loading-card {
+    padding: 30px 26px;
+  }
+
+  .aero-loading-card .aeroviation-wordmark {
+    width: min(260px, 90%);
+  }
+}
+
+/* UI REDESIGN R6 — FLEET + SIMULATORS */
+
+.fleet-redesign-page .fleet-resources-page > .back-button {
+  display: none;
+}
+
+.fleet-page-heading {
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.fleet-page-heading h1 {
+  margin: 7px 0;
+  font-size: clamp(38px, 5vw, 58px);
+  letter-spacing: -0.045em;
+}
+
+.fleet-page-heading p {
+  max-width: 720px;
+  margin: 0;
+}
+
+.fleet-control-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border: 1px solid rgba(74, 151, 112, 0.35);
+  border-radius: 999px;
+  background: rgba(31, 105, 68, 0.14);
+  color: #85c9a6;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.fleet-resources-page .fleet-tabs {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin: 0 0 14px;
+}
+
+.fleet-resources-page .fleet-tabs .stat-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-height: 58px;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.fleet-resources-page .fleet-tabs .stat-card strong {
+  font-size: 21px;
+}
+
+.fleet-resources-page .fleet-tabs .stat-card span {
+  font-size: 10px;
+  letter-spacing: 0.07em;
+}
+
+.fleet-summary-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(74, 125, 166, 0.24);
+  border-radius: 13px;
+  background: rgba(6, 20, 34, 0.65);
+}
+
+.fleet-summary-strip > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 58px;
+  padding: 13px 17px;
+  border-right: 1px solid rgba(74, 125, 166, 0.2);
+}
+
+.fleet-summary-strip > div:last-child {
+  border-right: 0;
+}
+
+.fleet-summary-strip span {
+  color: #7894aa;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.fleet-summary-strip strong {
+  color: #eaf4fb;
+  font-size: 21px;
+}
+
+.resource-create-panel {
+  margin-top: 0 !important;
+  padding: 21px 23px !important;
+  border-radius: 15px !important;
+  background: linear-gradient(110deg, rgba(9, 31, 49, 0.97), rgba(7, 23, 38, 0.91)) !important;
+}
+
+.resource-create-panel .booking-section-heading {
+  margin-bottom: 17px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(74, 125, 166, 0.2);
+}
+
+.resource-create-panel .booking-section-heading h2 {
+  margin: 5px 0 0;
+  font-size: 20px;
+}
+
+.resource-editor-form .booking-time-grid {
+  gap: 13px;
+}
+
+.resource-editor-form .booking-field {
+  margin-top: 11px;
+}
+
+.resource-editor-form .booking-field label {
+  margin-bottom: 6px;
+  color: #86a8c2;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.resource-editor-form input,
+.resource-editor-form textarea {
+  border-color: rgba(76, 132, 174, 0.48);
+  background: rgba(5, 16, 29, 0.78);
+}
+
+.resource-editor-form textarea {
+  min-height: 88px;
+}
+
+.resource-editor-form .booking-actions {
+  margin-top: 16px;
+}
+
+.fleet-resources-page .booking-history-section {
+  margin-top: 30px;
+}
+
+.fleet-resources-page .booking-history-section > .booking-section-heading {
+  margin-bottom: 15px;
+}
+
+.fleet-resource-list {
+  gap: 14px;
+}
+
+.fleet-resource-card {
+  position: relative;
+  overflow: hidden;
+  padding: 21px 23px !important;
+  border-color: rgba(70, 124, 165, 0.32) !important;
+  border-radius: 15px !important;
+  background: linear-gradient(110deg, rgba(9, 31, 49, 0.97), rgba(7, 23, 38, 0.91)) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.14);
+}
+
+.fleet-resource-card::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: #4ba7f5;
+  content: "";
+}
+
+.fleet-resource-card.resource-aircraft::before {
+  background: #51b47f;
+}
+
+.fleet-resource-card.inactive::before {
+  background: #667d91;
+}
+
+.fleet-resource-card.inactive {
+  opacity: 0.78;
+}
+
+.fleet-resource-card .student-booking-header {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(74, 125, 166, 0.2);
+}
+
+.fleet-resource-card .student-booking-header h3 {
+  margin-bottom: 5px;
+  font-size: 21px;
+}
+
+.fleet-resource-card .student-booking-header p {
+  margin: 0;
+  color: #789ab3;
+  font-size: 12px;
+}
+
+.fleet-resource-card .booking-details-grid {
+  gap: 18px;
+  margin-top: 17px;
+}
+
+.fleet-resource-card .booking-details-grid .muted {
+  display: block;
+  margin-bottom: 4px;
+  color: #6f91aa;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.fleet-resource-card .booking-details-grid strong {
+  color: #dceaf5;
+  font-size: 13px;
+}
+
+.fleet-resource-card > .booking-note {
+  margin-top: 16px;
+  padding: 11px 13px;
+  border: 1px solid rgba(74, 125, 166, 0.23);
+  border-radius: 9px;
+  background: rgba(5, 18, 31, 0.44);
+  color: #9bb0c0;
+  font-size: 12px;
+}
+
+.fleet-resource-card > .booking-actions {
+  margin-top: 16px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(74, 125, 166, 0.18);
+}
+
+@media (max-width: 650px) {
+  .fleet-page-heading {
+    align-items: flex-start;
+  }
+
+  .fleet-summary-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .fleet-summary-strip > div {
+    border-right: 0;
+    border-bottom: 1px solid rgba(74, 125, 166, 0.2);
+  }
+
+  .fleet-summary-strip > div:last-child {
+    border-bottom: 0;
+  }
+
+  .fleet-resource-card,
+  .resource-create-panel {
+    padding: 18px !important;
+  }
+
+  .resource-editor-form .booking-time-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .booking-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .instructor-booking-details,
+  .instructor-action-grid,
+  .timetable-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================================
+   M024 — GROUND SCHOOL + TESTS
+   ========================================================= */
+
+.ground-school-page {
+  padding-top: 54px;
+}
+
+.ground-school-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 26px;
+}
+
+.ground-school-heading h1 {
+  margin: 6px 0 8px;
+}
+
+.ground-heading-actions {
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+.ground-heading-actions .primary,
+.ground-heading-actions .secondary {
+  width: auto;
+  margin-top: 0;
+}
+
+.ground-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #17384f;
+}
+
+.ground-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 9px 14px;
+  border: 1px solid #29465f;
+  border-radius: 10px;
+  background: #071827;
+  color: #9fb7cc;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.ground-tab:hover,
+.ground-tab.active {
+  border-color: #368cf0;
+  color: #e9f4ff;
+  background: #0b2740;
+}
+
+.ground-tab span {
+  display: grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #102f49;
+  color: #8fc8ff;
+  font-size: 11px;
+}
+
+.aeropath-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(3, 10, 24, 0.68);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.aeropath-large-modal {
+  max-height: min(900px, calc(100vh - 48px));
+  overflow-y: auto;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 22px;
+  background: rgba(9, 24, 42, 0.985);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.48);
+}
+
+.aeropath-large-modal h2,
+.aeropath-large-modal h3 {
+  margin-top: 6px;
+}
+
+.ground-modal-actions {
+  margin-top: 22px;
+}
+
+.ground-modal-error {
+  margin: 16px 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.ground-modal-actions .primary,
+.ground-modal-actions .secondary,
+.ground-modal-actions .danger-button {
+  width: auto;
+  margin-top: 0;
+}
+
+.ground-detail-section {
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid #17384f;
+}
+
+.ground-detail-section .booking-section-heading h3 {
+  margin: 5px 0 0;
+}
+
+.ground-roster,
+.ground-compact-list,
+.ground-attempt-questions {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.ground-roster-row,
+.ground-compact-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid #203e58;
+  border-radius: 12px;
+  background: #071827;
+}
+
+.ground-roster-row > div:first-child,
+.ground-compact-row > div:first-child {
+  min-width: 0;
+}
+
+.ground-roster-row strong,
+.ground-compact-row strong {
+  display: block;
+  color: #eaf4ff;
+}
+
+.ground-roster-row span,
+.ground-compact-row span:not(.booking-status) {
+  display: block;
+  margin-top: 4px;
+  color: #7694ad;
+  font-size: 12px;
+}
+
+.ground-roster-row select {
+  min-width: 130px;
+}
+
+.ground-roster-row .secondary,
+.ground-compact-row .secondary {
+  width: auto;
+}
+
+.ground-history-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ground-history-grid .student-booking-card {
+  min-width: 0;
+}
+
+.ground-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 18px;
+  margin-top: 20px;
+}
+
+.ground-field-wide,
+.ground-form-actions {
+  grid-column: 1 / -1;
+}
+
+.ground-form-actions {
+  margin-top: 6px;
+}
+
+.ground-form-actions .primary,
+.ground-form-actions .secondary {
+  width: auto;
+}
+
+.ground-question-card,
+.ground-attempt-question {
+  padding: 18px;
+  border: 1px solid #25465f;
+  border-radius: 14px;
+  background: #071827;
+}
+
+.ground-question-card > div:first-child strong,
+.ground-attempt-question h3 {
+  display: block;
+  margin: 7px 0 12px;
+  color: #eef6ff;
+  line-height: 1.45;
+}
+
+.ground-question-card ol {
+  margin: 10px 0 0;
+  padding-left: 22px;
+  color: #a9bdcf;
+}
+
+.ground-correct-option {
+  color: #8ce5b6;
+  font-weight: 800;
+}
+
+.ground-option-editor,
+.ground-answer-options {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.ground-option-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.ground-check-label,
+.ground-answer-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.ground-check-label input,
+.ground-answer-option input {
+  width: auto;
+  flex: 0 0 auto;
+  accent-color: #2f83ee;
+}
+
+.ground-answer-option {
+  min-height: 48px;
+  padding: 11px 13px;
+  border: 1px solid #29465f;
+  border-radius: 11px;
+  background: #091c2d;
+  color: #d9e8f5;
+}
+
+.ground-answer-option.correct {
+  border-color: #347451;
+  background: #0b261b;
+}
+
+.ground-answer-option strong {
+  margin-left: auto;
+  color: #82dfac;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 820px) {
+  .ground-school-heading,
+  .booking-section-heading {
+    flex-direction: column;
+  }
+
+  .ground-heading-actions,
+  .ground-modal-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .ground-history-grid,
+  .ground-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ground-field-wide,
+  .ground-form-actions {
+    grid-column: auto;
+  }
+
+  .ground-roster-row,
+  .ground-compact-row,
+  .ground-option-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ground-roster-row select {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .aeropath-modal-backdrop {
+    padding: 12px;
+  }
+
+  .aeropath-large-modal {
+    max-height: calc(100vh - 24px);
+    padding: 20px;
+  }
+}
+
+/* UI REDESIGN R2 — NOTIFICATION CENTRE + OPERATIONAL TIMETABLE */
+
+.aero-icon-button {
+  position: relative;
+}
+
+.aero-notification-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border: 2px solid #091725;
+  border-radius: 999px;
+  background: #f05c66;
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.aero-notification-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 320;
+}
+
+.aero-notification-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: rgba(2, 8, 16, 0.5);
+  backdrop-filter: blur(9px);
+  cursor: default;
+}
+
+.aero-notification-panel {
+  position: absolute;
+  top: 70px;
+  right: 22px;
+  display: flex;
+  flex-direction: column;
+  width: min(430px, calc(100vw - 44px));
+  max-height: min(720px, calc(100vh - 92px));
+  overflow: hidden;
+  border: 1px solid rgba(102, 166, 219, 0.3);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(12, 32, 49, 0.96), rgba(6, 18, 31, 0.94));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(255, 255, 255, 0.025) inset;
+  backdrop-filter: blur(24px) saturate(130%);
+}
+
+.aero-notification-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 22px 16px;
+}
+
+.aero-notification-header .eyebrow {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.aero-notification-header h2 {
+  margin: 0;
+  color: #f3f7fb;
+  font-size: 24px;
+  letter-spacing: -0.025em;
+}
+
+.aero-popout-close {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--aero-border);
+  border-radius: 10px;
+  background: rgba(5, 17, 29, 0.66);
+  color: #9bb2c6;
+  cursor: pointer;
+}
+
+.aero-popout-close:hover {
+  border-color: #3974a4;
+  color: white;
+}
+
+.aero-notification-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 43px;
+  padding: 8px 22px;
+  border-block: 1px solid rgba(86, 135, 176, 0.22);
+  background: rgba(21, 55, 82, 0.3);
+  color: #8fa8bd;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.aero-notification-summary button {
+  padding: 5px;
+  border: 0;
+  background: transparent;
+  color: #72b8fa;
+  cursor: pointer;
+  font: inherit;
+}
+
+.aero-notification-feed {
+  min-height: 180px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.aero-notification-item {
+  display: grid;
+  grid-template-columns: 9px minmax(0, 1fr);
+  gap: 10px;
+  width: 100%;
+  padding: 16px 21px;
+  border: 0;
+  border-bottom: 1px solid rgba(81, 125, 160, 0.18);
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.aero-notification-item:hover {
+  background: rgba(50, 117, 169, 0.12);
+}
+
+.aero-notification-item.read {
+  opacity: 0.68;
+}
+
+.aero-notification-marker {
+  width: 7px;
+  height: 7px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: #3f6079;
+}
+
+.aero-notification-item.unread .aero-notification-marker {
+  background: #4ba7f5;
+  box-shadow: 0 0 0 4px rgba(75, 167, 245, 0.12);
+}
+
+.aero-notification-copy {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.aero-notification-meta {
+  color: #6e99ba;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.aero-notification-copy strong {
+  overflow: hidden;
+  color: #eaf2f9;
+  font-size: 14px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aero-notification-copy > span:last-child {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #96aabd;
+  font-size: 12px;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.aero-popout-empty {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  min-height: 210px;
+  padding: 30px;
+  color: #7390a8;
+  text-align: center;
+}
+
+.aero-popout-empty strong {
+  color: #dce9f3;
+}
+
+.aero-popout-empty span {
+  font-size: 12px;
+}
+
+.aero-popout-error {
+  margin: 14px;
+  padding: 11px 12px;
+  border: 1px solid rgba(232, 91, 102, 0.42);
+  border-radius: 9px;
+  background: rgba(80, 18, 27, 0.55);
+  color: #ffafb5;
+  font-size: 12px;
+}
+
+.aero-notification-footer {
+  padding: 13px 16px;
+  border-top: 1px solid rgba(86, 135, 176, 0.22);
+  background: rgba(5, 16, 28, 0.56);
+}
+
+.aero-notification-footer button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 40px;
+  border: 0;
+  border-radius: 9px;
+  background: rgba(45, 128, 194, 0.14);
+  color: #78bcf7;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.timetable-redesign-page .timetable-page > .back-button {
+  display: none;
+}
+
+.timetable-page-heading {
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.timetable-page-heading h1 {
+  margin: 7px 0 7px;
+  font-size: clamp(38px, 5vw, 58px);
+  letter-spacing: -0.045em;
+}
+
+.timetable-page-heading p {
+  max-width: 720px;
+  margin: 0;
+}
+
+.timetable-live-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border: 1px solid rgba(74, 151, 112, 0.35);
+  border-radius: 999px;
+  background: rgba(31, 105, 68, 0.14);
+  color: #85c9a6;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.timetable-command-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 160px);
+  align-items: center;
+  gap: 14px;
+  padding: 13px;
+  border: 1px solid var(--aero-border);
+  border-radius: 15px;
+  background: rgba(10, 29, 45, 0.84);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.15);
+}
+
+.timetable-view-selector {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 7px;
+  margin: 0;
+}
+
+.timetable-view-selector .booking-filter-card {
+  min-height: 50px;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.timetable-view-selector .booking-filter-card strong {
+  display: none;
+}
+
+.timetable-view-selector .booking-filter-card span {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.timetable-command-bar .timetable-date-controls {
+  display: flex;
+  gap: 7px;
+}
+
+.timetable-command-bar .timetable-date-input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  text-align: center;
+}
+
+.timetable-summary-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(74, 125, 166, 0.22);
+  border-radius: 13px;
+  background: rgba(6, 20, 34, 0.62);
+}
+
+.timetable-summary-strip > div {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  min-height: 54px;
+  padding: 14px 18px;
+  border-right: 1px solid rgba(74, 125, 166, 0.2);
+}
+
+.timetable-summary-strip > div:last-child {
+  border-right: 0;
+}
+
+.timetable-summary-strip strong {
+  color: #ecf5fc;
+  font-size: 20px;
+}
+
+.timetable-summary-strip span {
+  color: #7894aa;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.timetable-filter-panel {
+  margin-top: 14px !important;
+  padding: 18px 20px !important;
+  background: rgba(9, 27, 43, 0.78) !important;
+}
+
+.timetable-filter-panel .booking-details-grid {
+  gap: 12px;
+  margin-top: 11px;
+}
+
+.timetable-filter-panel .booking-field label {
+  font-size: 11px;
+}
+
+.timetable-filter-panel select {
+  min-height: 43px;
+}
+
+.timetable-redesign-page .timetable-date-heading {
+  margin-top: 30px;
+}
+
+.timetable-redesign-page .timetable-card {
+  overflow: hidden;
+  border-color: rgba(69, 122, 163, 0.34);
+  border-radius: 14px;
+  background: linear-gradient(105deg, rgba(9, 31, 49, 0.96), rgba(7, 23, 38, 0.9));
+  box-shadow: 0 13px 36px rgba(0, 0, 0, 0.13);
+}
+
+.timetable-redesign-page .timetable-time-column {
+  min-width: 104px;
+  background: rgba(32, 103, 157, 0.12);
+}
+
+.timetable-redesign-page .timetable-time-column strong {
+  color: #8bc9fb;
+  font-size: 19px;
+}
+
+.timetable-day-card {
+  padding: 18px !important;
+}
+
+@media (max-width: 860px) {
+  .timetable-command-bar {
+    grid-template-columns: 1fr auto;
+  }
+
+  .timetable-view-selector {
+    grid-column: 1 / -1;
+  }
+
+  .timetable-summary-strip > div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+
+@media (max-width: 620px) {
+  .aero-notification-panel {
+    top: auto;
+    right: 10px;
+    bottom: calc(76px + env(safe-area-inset-bottom));
+    width: calc(100vw - 20px);
+    max-height: calc(100vh - 100px);
+    border-radius: 18px;
+  }
+
+  .aero-notification-header {
+    padding: 18px 18px 14px;
+  }
+
+  .aero-notification-summary {
+    padding-inline: 18px;
+  }
+
+  .timetable-command-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .timetable-command-bar .timetable-date-controls,
+  .timetable-command-bar .timetable-date-input {
+    width: 100%;
+  }
+
+  .timetable-command-bar .timetable-date-controls button {
+    flex: 1;
+  }
+
+  .timetable-summary-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .timetable-summary-strip > div {
+    flex-direction: row;
+    align-items: baseline;
+    border-right: 0;
+    border-bottom: 1px solid rgba(74, 125, 166, 0.2);
+  }
+
+  .timetable-summary-strip > div:last-child {
+    border-bottom: 0;
+  }
+
+  .timetable-redesign-page .timetable-card {
+    grid-template-columns: 1fr;
+  }
+
+  .timetable-redesign-page .timetable-time-column {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    min-width: 0;
+    padding: 13px 18px;
+  }
+}
+
+/* =========================================================
+   M024B — Session-based Ground School
+   ========================================================= */
+
+.ground-history-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.ground-progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.ground-progress-card {
+  display: grid;
+  gap: 7px;
+  padding: 14px;
+  border: 1px solid #27445d;
+  border-radius: 12px;
+  background: #091c2d;
+}
+
+.ground-progress-card strong {
+  color: #f5f9fc;
+}
+
+.ground-progress-card span,
+.ground-progress-card small {
+  color: #9fb3c7;
+}
+
+.ground-progress-card b {
+  color: #8fc2ff;
+}
+
+.ground-session-row {
+  align-items: center;
+}
+
+.ground-session-roster-row {
+  grid-template-columns: minmax(220px, 1.4fr) minmax(140px, .6fr) minmax(310px, 1.2fr);
+}
+
+.ground-inline-actions {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.ground-comment-feed {
+  display: grid;
+  gap: 10px;
+}
+
+.ground-comment-item {
+  padding: 13px 14px;
+  border: 1px solid #29465f;
+  border-radius: 11px;
+  background: #091c2d;
+}
+
+.ground-comment-item.internal {
+  border-style: dashed;
+}
+
+.ground-comment-item > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.ground-comment-item span {
+  color: #8fa6bb;
+  font-size: 12px;
+}
+
+.ground-comment-item p {
+  margin: 8px 0 0;
+  color: #dbe7f2;
+  white-space: pre-wrap;
+}
+
+.ground-timeline {
+  position: relative;
+  display: grid;
+  gap: 0;
+  margin-top: 14px;
+}
+
+.ground-timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 12px;
+  padding-bottom: 18px;
+}
+
+.ground-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 14px;
+  bottom: -2px;
+  width: 1px;
+  background: #27445d;
+}
+
+.ground-timeline-item:last-child::before {
+  display: none;
+}
+
+.ground-timeline-dot {
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  border: 3px solid #0b1d2e;
+  border-radius: 50%;
+  background: #5da8ff;
+  box-shadow: 0 0 0 1px #3d6f9a;
+  z-index: 1;
+}
+
+.ground-timeline-content {
+  display: grid;
+  gap: 4px;
+}
+
+.ground-timeline-content > span {
+  color: #829bb2;
+  font-size: 12px;
+}
+
+.ground-timeline-content > p {
+  margin: 0;
+  color: #a8bbcc;
+}
+
+.ground-internal-note {
+  border-style: dashed;
+}
+
+.aero-calendar-field {
+  position: relative;
+}
+
+.aero-calendar-trigger {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid #34516b;
+  border-radius: 10px;
+  background: #091c2d;
+  color: #e9f2fa;
+  font: inherit;
+  cursor: pointer;
+}
+
+.aero-calendar-trigger:hover {
+  border-color: #5b89b3;
+}
+
+.aero-calendar-popover {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 0;
+  width: min(330px, calc(100vw - 48px));
+  padding: 12px;
+  border: 1px solid #365875;
+  border-radius: 14px;
+  background: #0a1c2c;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .45);
+  z-index: 1200;
+}
+
+.aero-calendar-header {
+  display: grid;
+  grid-template-columns: 34px 1fr 34px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.aero-calendar-header strong {
+  text-align: center;
+  color: #eef6fd;
+}
+
+.aero-calendar-header button,
+.aero-calendar-grid button,
+.aero-calendar-today {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #d7e6f4;
+  cursor: pointer;
+  font: inherit;
+}
+
+.aero-calendar-header button {
+  height: 34px;
+  font-size: 22px;
+}
+
+.aero-calendar-weekdays,
+.aero-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.aero-calendar-weekdays {
+  margin-bottom: 4px;
+  color: #7893aa;
+  font-size: 11px;
+  text-align: center;
+}
+
+.aero-calendar-grid button {
+  min-height: 34px;
+}
+
+.aero-calendar-grid button:hover {
+  border-color: #426e94;
+  background: #102b42;
+}
+
+.aero-calendar-grid button.outside {
+  opacity: .38;
+}
+
+.aero-calendar-grid button.selected {
+  border-color: #5ba7f6;
+  background: #174a72;
+  color: #fff;
+}
+
+.aero-calendar-today {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border-color: #294b68;
+}
+
+.ground-classroom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.ground-classroom-card {
+  display: grid;
+  gap: 5px;
+  min-height: 96px;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #29465f;
+  border-radius: 12px;
+  background: #091c2d;
+  color: #e9f2fa;
+  cursor: pointer;
+}
+
+.ground-classroom-card.active {
+  border-color: #5da8ff;
+  box-shadow: 0 0 0 1px rgba(93, 168, 255, .25);
+}
+
+.ground-classroom-card span,
+.ground-classroom-card small {
+  color: #8fa6bb;
+}
+
+/* =========================================================
+   UI REDESIGN R1 — BRANDED SHELL + FLIGHT DECK
+   ========================================================= */
+
+:root {
+  color: #f4f7fb;
+  background: #07111f;
+  --aero-bg: #07111f;
+  --aero-sidebar: #0d1b2a;
+  --aero-surface: #112638;
+  --aero-surface-soft: #0c2031;
+  --aero-border: rgba(145, 177, 204, 0.2);
+  --aero-border-strong: rgba(145, 177, 204, 0.34);
+  --aero-text: #f4f7fb;
+  --aero-muted: #aebcce;
+  --aero-blue: #4da3ff;
+  --aero-blue-soft: rgba(77, 163, 255, 0.13);
+  --aero-bronze: #b16c51;
+  --aero-success: #34d399;
+  --aero-warning: #fbbf24;
+  --aero-danger: #f87171;
+}
+
+body {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(33, 89, 130, 0.13), transparent 30%),
+    var(--aero-bg);
+  color: var(--aero-text);
+  font-size: 16px;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(77, 163, 255, 0.38);
+  outline-offset: 2px;
+}
+
+.aero-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 272px minmax(0, 1fr);
+  background: var(--aero-bg);
+}
+
+.aero-sidebar {
+  position: sticky;
+  top: 0;
+  z-index: 240;
+  display: flex;
+  flex-direction: column;
+  width: 272px;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 24px 16px 18px;
+  border-right: 1px solid var(--aero-border);
+  background:
+    linear-gradient(180deg, rgba(177, 108, 81, 0.055), transparent 19%),
+    var(--aero-sidebar);
+}
+
+.aero-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 58px;
+  padding: 8px 10px 18px;
+  border: 0;
+  border-bottom: 1px solid var(--aero-border);
+  background: transparent;
+  color: var(--aero-text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.aero-brand-mark {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  color: var(--aero-bronze);
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.65;
+}
+
+.aero-sidebar-brand span,
+.aero-sidebar-footer span:not(.aero-system-dot) {
+  display: grid;
+  min-width: 0;
+}
+
+.aero-sidebar-brand strong {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.aero-sidebar-brand small {
+  margin-top: 3px;
+  color: #d09a78;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.aero-sidebar-nav {
+  display: grid;
+  gap: 23px;
+  padding: 24px 0;
+}
+
+.aero-nav-group {
+  display: grid;
+  gap: 5px;
+}
+
+.aero-nav-group h2 {
+  margin: 0 12px 7px;
+  color: #71879c;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.aero-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: transparent;
+  color: #aebcce;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 550;
+  text-align: left;
+  transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+}
+
+.aero-nav-item:hover {
+  border-color: var(--aero-border);
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--aero-text);
+}
+
+.aero-nav-item.active {
+  border-color: rgba(77, 163, 255, 0.26);
+  background: var(--aero-blue-soft);
+  color: #79b8ff;
+}
+
+.aero-nav-item.active::before {
+  content: "";
+  position: absolute;
+  left: -17px;
+  width: 3px;
+  height: 22px;
+  border-radius: 0 4px 4px 0;
+  background: var(--aero-blue);
+  box-shadow: 0 0 14px rgba(77, 163, 255, 0.5);
+}
+
+.aero-nav-item svg {
+  flex: 0 0 auto;
+}
+
+.aero-sidebar-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding: 15px 12px 4px;
+  border-top: 1px solid var(--aero-border);
+}
+
+.aero-sidebar-footer strong,
+.aero-sidebar-footer small {
+  font-size: 11px;
+}
+
+.aero-sidebar-footer small {
+  margin-top: 2px;
+  color: #71879c;
+}
+
+.aero-system-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--aero-success);
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.1);
+}
+
+.aero-shell-stage {
+  min-width: 0;
+}
+
+.aero-utility-bar {
+  position: sticky;
+  top: 0;
+  z-index: 180;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  padding: 10px 28px;
+  border-bottom: 1px solid var(--aero-border);
+  background: rgba(7, 17, 31, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.aero-utility-context {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.aero-utility-context > div {
+  display: grid;
+  gap: 2px;
+}
+
+.aero-utility-context span {
+  color: #6f8ba4;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.aero-utility-context strong {
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.aero-utility-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.aero-icon-button,
+.aero-mobile-menu,
+.aero-drawer-close {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--aero-border);
+  border-radius: 12px;
+  background: rgba(17, 38, 56, 0.74);
+  color: #b9c7d6;
+  cursor: pointer;
+}
+
+.aero-icon-button:hover,
+.aero-icon-button.active,
+.aero-mobile-menu:hover {
+  border-color: rgba(77, 163, 255, 0.44);
+  background: var(--aero-blue-soft);
+  color: #79b8ff;
+}
+
+.aero-profile-control {
+  position: relative;
+}
+
+.aero-profile-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 4px 9px 4px 5px;
+  border: 1px solid var(--aero-border);
+  border-radius: 13px;
+  background: rgba(17, 38, 56, 0.74);
+  color: var(--aero-text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.aero-profile-button:hover,
+.aero-profile-button.open {
+  border-color: var(--aero-border-strong);
+  background: var(--aero-surface);
+}
+
+.aero-avatar {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(208, 154, 120, 0.52);
+  border-radius: 10px;
+  background: rgba(177, 108, 81, 0.14);
+  color: #e3b18f;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.aero-profile-copy {
+  display: grid;
+  gap: 1px;
+  max-width: 150px;
+}
+
+.aero-profile-copy strong,
+.aero-profile-copy small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aero-profile-copy strong {
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.aero-profile-copy small {
+  color: #8fa4b8;
+  font-size: 10px;
+}
+
+.aero-profile-menu {
+  position: absolute;
+  top: calc(100% + 9px);
+  right: 0;
+  z-index: 300;
+  display: grid;
+  gap: 4px;
+  width: 190px;
+  padding: 7px;
+  border: 1px solid var(--aero-border-strong);
+  border-radius: 14px;
+  background: rgba(13, 27, 42, 0.98);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(16px);
+}
+
+.aero-profile-menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 9px 11px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #dbe6f0;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+}
+
+.aero-profile-menu button:hover {
+  background: rgba(77, 163, 255, 0.1);
+  color: #8fc5ff;
+}
+
+.aero-shell-content {
+  min-width: 0;
+}
+
+.aero-shell-content > .app {
+  min-height: calc(100vh - 70px);
+  background: transparent;
+}
+
+.aero-shell-content > .app > .topbar {
+  display: none;
+}
+
+.aero-shell-content .bookings-page,
+.aero-shell-content .admin-page,
+.aero-shell-content .timetable-page {
+  width: min(1280px, calc(100% - 56px));
+  padding-top: 38px;
+  padding-bottom: 88px;
+}
+
+.aero-shell-content .ground-school-page {
+  padding-top: 38px;
+}
+
+.aero-shell-content .bookings-page > h1,
+.aero-shell-content .admin-page h1,
+.aero-shell-content .timetable-page h1 {
+  font-size: clamp(30px, 3.2vw, 40px);
+  letter-spacing: -0.035em;
+}
+
+.aero-shell-content .hero {
+  width: min(1280px, calc(100% - 56px));
+  margin: 0 auto;
+  padding: 42px 0 28px;
+}
+
+.aero-page-hero,
+.aero-page-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.aero-page-hero h1,
+.aero-page-heading h1 {
+  margin: 7px 0 8px;
+  font-size: clamp(30px, 3.3vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.aero-page-hero .muted,
+.aero-page-heading .muted {
+  max-width: 680px;
+  margin: 0;
+  font-size: 15px;
+}
+
+.aero-heading-aside {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aero-module-emblem {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 78px;
+  overflow: hidden;
+  border: 1px solid rgba(93, 166, 219, 0.38);
+  border-radius: 18px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(145deg, rgba(18, 50, 75, 0.96), rgba(7, 22, 36, 0.98));
+  background-size: 12px 12px, 12px 12px, auto;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.2), inset 0 0 24px rgba(54, 138, 201, 0.08);
+  color: #84c8f7;
+}
+
+.aero-module-emblem::after {
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.045);
+  border-radius: 12px;
+  content: "";
+  pointer-events: none;
+}
+
+.aero-module-emblem svg {
+  width: 54px;
+  height: 54px;
+  stroke: currentColor;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+}
+
+.aero-module-emblem.emblem-departures {
+  border-color: rgba(227, 176, 73, 0.42);
+  color: #efbf65;
+}
+
+.aero-module-emblem.emblem-headset,
+.aero-module-emblem.emblem-bookings {
+  color: #7fc7ff;
+}
+
+.aero-module-emblem.emblem-vr {
+  border-color: rgba(148, 117, 255, 0.42);
+  color: #b4a0ff;
+}
+
+.aero-module-emblem.emblem-aircraft,
+.aero-module-emblem.emblem-preflight {
+  border-color: rgba(79, 202, 161, 0.36);
+  color: #72dbb5;
+}
+
+.aero-module-emblem.emblem-history,
+.aero-module-emblem.emblem-accounts {
+  border-color: rgba(205, 133, 91, 0.38);
+  color: #e1a27d;
+}
+
+.aero-module-emblem.compact {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 18px rgba(54, 138, 201, 0.07);
+}
+
+.aero-module-emblem.compact::after {
+  inset: 5px;
+  border-radius: 8px;
+}
+
+.aero-module-emblem.compact svg {
+  width: 32px;
+  height: 32px;
+}
+
+.aero-module-emblem.bare {
+  display: block;
+  width: 50px;
+  height: 50px;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.aero-module-emblem.bare::after {
+  display: none;
+}
+
+.aero-module-emblem.bare svg {
+  width: 46px;
+  height: 46px;
+  filter: none;
+}
+
+.fleet-resource-title {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 13px;
+}
+
+.fleet-resource-title h3,
+.fleet-resource-title p {
+  margin-left: 0;
+}
+
+.aero-capability-line {
+  margin: 10px 0 0;
+  color: #7f96aa;
+  font-size: 12px;
+}
+
+.aero-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 5px;
+  white-space: nowrap;
+}
+
+.aero-page-role {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 12px;
+  border: 1px solid rgba(77, 163, 255, 0.32);
+  border-radius: 999px;
+  background: var(--aero-blue-soft);
+  color: #8fc5ff;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.aero-shell-content .booking-form-card,
+.aero-shell-content .student-booking-card,
+.aero-shell-content .stat-card,
+.aero-shell-content .user-card {
+  border-color: var(--aero-border);
+  background: linear-gradient(145deg, rgba(17, 38, 56, 0.96), rgba(10, 29, 44, 0.96));
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.11);
+}
+
+.training-bookings-page .booking-form-card {
+  margin-top: 28px;
+}
+
+.aero-shell-content .booking-form-card,
+.aero-shell-content .student-booking-card {
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.aero-shell-content .booking-history-section {
+  margin-top: 38px;
+}
+
+.aero-shell-content .booking-field label,
+.aero-shell-content label {
+  color: #dce7f1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.aero-shell-content input,
+.aero-shell-content select,
+.aero-shell-content textarea {
+  min-height: 48px;
+  border-color: var(--aero-border-strong);
+  border-radius: 11px;
+  background: rgba(7, 17, 31, 0.72);
+  color: var(--aero-text);
+  font-size: 15px;
+}
+
+.aero-shell-content textarea {
+  min-height: 104px;
+}
+
+.aero-shell-content .primary,
+.aero-shell-content .secondary,
+.aero-shell-content .danger-button {
+  min-height: 44px;
+  border-radius: 11px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.aero-shell-content .primary {
+  background: #3e8ff0;
+  box-shadow: 0 8px 24px rgba(47, 131, 238, 0.2);
+}
+
+.aero-shell-content .eyebrow {
+  color: #79b8ff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.flight-deck-page .admin-stats {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.flight-deck-page .stat-card {
+  min-height: 108px;
+  padding: 18px;
+  cursor: default;
+}
+
+.flight-deck-page button.stat-card {
+  cursor: pointer;
+}
+
+.flight-deck-page .stat-card strong {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.flight-deck-page .stat-card span {
+  color: #93a9bd;
+  font-size: 10px;
+}
+
+.aero-mobile-menu,
+.aero-drawer-close,
+.aero-mobile-nav {
+  display: none;
+}
+
+/* Authentication */
+
+.aero-auth {
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(420px, 0.84fr);
+  place-items: stretch;
+  padding: 0;
+  background: #07111f;
+}
+
+.aero-auth-visual {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: clamp(34px, 5vw, 72px);
+  background: #0a1726 url("/bristell-sunset-hero-v2.png") center center / cover no-repeat;
+}
+
+.aero-auth-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(5, 14, 25, 0.76), rgba(5, 14, 25, 0.1) 68%),
+    linear-gradient(0deg, rgba(5, 14, 25, 0.94), transparent 66%);
+}
+
+.aero-auth-visual .brand {
+  position: relative;
+  z-index: 2;
+  width: min(300px, 52%);
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 16px;
+  background: rgba(247, 248, 249, 0.9);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.aeroviation-wordmark {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.brand-name {
+  margin-top: 9px;
+  color: #0a173b;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: none;
+}
+
+.brand-by {
+  margin-top: 4px;
+  color: #6d7180;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+}
+
+.brand.compact .aeroviation-wordmark {
+  width: 150px;
+}
+
+.brand.compact .brand-name {
+  font-size: 19px;
+}
+
+.aero-auth-visual-copy {
+  position: absolute;
+  left: clamp(34px, 5vw, 72px);
+  right: clamp(34px, 7vw, 100px);
+  bottom: clamp(54px, 8vw, 104px);
+  z-index: 2;
+  max-width: 720px;
+}
+
+.aero-auth-visual-copy .eyebrow {
+  margin: 0 0 12px;
+  color: #e3b18f;
+}
+
+.aero-auth-visual-copy h1 {
+  max-width: 650px;
+  font-size: clamp(42px, 5.2vw, 68px);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+
+.aero-auth-visual-copy p {
+  max-width: 570px;
+  margin: 18px 0 0;
+  color: #d6e0e9;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.aero-horizon {
+  position: absolute;
+  inset: 24% -6% auto 13%;
+  z-index: -1;
+  height: 46%;
+  opacity: 0.72;
+}
+
+.aero-horizon svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  stroke: rgba(244, 247, 251, 0.38);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.aero-horizon svg path:last-child {
+  fill: rgba(7, 17, 31, 0.48);
+  stroke: rgba(244, 247, 251, 0.66);
+}
+
+.aero-horizon-sun {
+  position: absolute;
+  top: 5%;
+  right: 22%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(250, 190, 129, 0.52);
+  filter: blur(1px);
+  box-shadow: 0 0 80px rgba(250, 190, 129, 0.64);
+}
+
+.aero-auth-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  padding: clamp(38px, 6vw, 86px);
+  border: 0;
+  border-left: 1px solid var(--aero-border);
+  border-radius: 0;
+  background: #091725;
+  box-shadow: none;
+}
+
+.aero-auth-card > .eyebrow {
+  margin: 0 0 10px;
+}
+
+.aero-auth-card h2 {
+  margin: 0;
+  font-size: clamp(34px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.aero-auth-card > .muted {
+  margin: 10px 0 4px;
+  font-size: 15px;
+}
+
+.aero-auth-card label {
+  margin-top: 21px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.aero-auth-card input {
+  min-height: 50px;
+  border-color: var(--aero-border-strong);
+  border-radius: 11px;
+  background: rgba(7, 17, 31, 0.82);
+  font-size: 15px;
+}
+
+.aero-auth-card .primary {
+  min-height: 50px;
+  margin-top: 22px;
+  border-radius: 11px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.aero-auth-card .auth-switch {
+  min-height: 46px;
+  font-size: 13px;
+}
+
+.aero-auth-mobile-brand {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .aero-shell {
+    grid-template-columns: 244px minmax(0, 1fr);
+  }
+
+  .aero-sidebar {
+    width: 244px;
+  }
+
+  .flight-deck-page .admin-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 920px) {
+  .aero-shell {
+    display: block;
+  }
+
+  .aero-sidebar {
+    position: fixed;
+    left: 0;
+    transform: translateX(-104%);
+    width: min(310px, 88vw);
+    box-shadow: 24px 0 80px rgba(0, 0, 0, 0.5);
+    transition: transform 0.22s ease;
+  }
+
+  .aero-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .aero-drawer-close {
+    position: absolute;
+    top: 15px;
+    right: 13px;
+    display: grid;
+  }
+
+  .aero-sidebar-brand {
+    padding-right: 48px;
+  }
+
+  .aero-drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 230;
+    border: 0;
+    background: rgba(2, 8, 16, 0.62);
+    backdrop-filter: blur(5px);
+  }
+
+  .aero-mobile-menu {
+    display: grid;
+  }
+
+  .aero-utility-bar {
+    min-height: 64px;
+    padding: 9px 18px;
+  }
+
+  .aero-shell-content > .app {
+    min-height: calc(100vh - 64px);
+    padding-bottom: 72px;
+  }
+
+  .aero-mobile-nav {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 210;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 66px;
+    padding: 6px max(8px, env(safe-area-inset-right)) max(6px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
+    border-top: 1px solid var(--aero-border);
+    background: rgba(9, 23, 37, 0.96);
+    backdrop-filter: blur(18px);
+  }
+
+  .aero-mobile-nav button {
+    display: grid;
+    place-items: center;
+    gap: 2px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: #7e94a8;
+    cursor: pointer;
+    font-size: 10px;
+  }
+
+  .aero-mobile-nav button.active {
+    background: var(--aero-blue-soft);
+    color: #79b8ff;
+  }
+
+  .aero-auth {
+    grid-template-columns: 1fr;
+  }
+
+  .aero-auth-visual {
+    display: none;
+  }
+
+  .aero-auth-card {
+    min-height: 100vh;
+    border-left: 0;
+  }
+
+  .aero-auth-mobile-brand {
+    display: block;
+    width: min(230px, 70%);
+    margin-bottom: 42px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: rgba(247, 248, 249, 0.94);
+  }
+}
+
+@media (max-width: 700px) {
+  .aero-profile-copy,
+  .aero-profile-button > svg {
+    display: none;
+  }
+
+  .aero-profile-button {
+    width: 44px;
+    padding: 3px;
+  }
+
+  .aero-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .aero-utility-context > div {
+    display: none;
+  }
+
+  .aero-shell-content .bookings-page,
+  .aero-shell-content .admin-page,
+  .aero-shell-content .timetable-page,
+  .aero-shell-content .hero {
+    width: calc(100% - 32px);
+  }
+
+  .aero-shell-content .bookings-page,
+  .aero-shell-content .admin-page,
+  .aero-shell-content .timetable-page {
+    padding-top: 26px;
+  }
+
+  .aero-shell-content .hero {
+    padding-top: 28px;
+  }
+
+  .aero-page-hero,
+  .aero-page-heading {
+    flex-direction: column;
+  }
+
+  .aero-heading-aside {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .aero-module-emblem {
+    width: 66px;
+    height: 66px;
+    border-radius: 16px;
+  }
+
+  .aero-module-emblem svg {
+    width: 46px;
+    height: 46px;
+  }
+
+  .aero-module-emblem.compact {
+    width: 44px;
+    height: 44px;
+  }
+
+  .aero-module-emblem.compact svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .aero-refresh-button {
+    margin-top: 0;
+  }
+
+  .flight-deck-page .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .aero-shell-content .booking-form-card,
+  .aero-shell-content .student-booking-card {
+    padding: 19px;
+  }
+
+  .aero-auth-card {
+    padding: 30px 24px;
+  }
+}
+
+@media (max-width: 440px) {
+  .aero-utility-actions {
+    gap: 7px;
+  }
+
+  .flight-deck-page .admin-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .flight-deck-page .stat-card {
+    min-height: 96px;
+  }
+}
+
+.ground-flightdeck-card {
+  border-left: 3px solid #4f99df;
+}
+
+.resource-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.fleet-tabs,
+.training-mode-tabs {
+  margin-top: 18px;
+}
+
+.training-history-note {
+  margin: 12px 0 18px;
+  padding: 12px 14px;
+  border: 1px solid #29465f;
+  border-radius: 10px;
+  background: #091c2d;
+}
+
+@media print {
+  .topbar,
+  .back-button,
+  .training-mode-tabs,
+  .booking-actions,
+  .secondary,
+  .primary,
+  .action-modal-backdrop {
+    display: none !important;
+  }
+
+  body,
+  .app,
+  .bookings-page,
+  .student-booking-card {
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  .student-booking-card {
+    break-inside: avoid;
+    border-color: #bbb !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .ground-session-roster-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ground-comment-item > div {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .aero-calendar-popover {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    top: 50%;
+    width: auto;
+    transform: translateY(-50%);
+  }
+}
+
+/* SUPPLIED-SCREENSHOT DIRECTION — final cascade */
+.aero-sidebar {
+  background: linear-gradient(180deg, #061526, #07111f);
+}
+.aero-sidebar-brand {
+  min-height: 116px;
+  justify-content: center;
+  padding: 10px 12px 18px;
+}
+.aero-sidebar-brand .aero-brand-lockup { width: 100%; }
+.aero-nav-item.active {
+  border-color: rgba(27, 132, 255, .55);
+  background: linear-gradient(90deg, #086ad4, #0754aa);
+  box-shadow: 0 7px 20px rgba(0, 93, 205, .25);
+  color: #fff;
+}
+.aero-nav-item.active::before { display: none; }
+.aero-avatar { border-radius: 50%; }
+.aero-mobile-wing,
+.aero-mobile-deck-brand,
+.aero-mobile-quick-actions { display: none; }
+
+.aero-auth {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 100dvh;
+  overflow: hidden;
+  padding: clamp(28px, 5vw, 72px);
+  background: #07111f;
+}
+.aero-auth-visual {
+  position: absolute;
+  inset: 0;
+  display: block;
+  min-height: 100%;
+  padding: clamp(28px, 5vw, 70px);
+  background: #0a1726 url("/bristell-sunset-desktop.png") center / cover no-repeat;
+}
+.aero-auth-visual::before {
+  z-index: 0;
+  background: linear-gradient(90deg, rgba(3,12,24,.58), rgba(3,12,24,.08) 58%), linear-gradient(0deg, rgba(3,12,24,.68), transparent 56%);
+}
+.aero-auth-visual > .aero-brand-lockup {
+  position: relative;
+  z-index: 2;
+  width: 310px;
+}
+.aero-auth-visual-copy { bottom: clamp(42px, 7vw, 92px); max-width: 590px; }
+.aero-auth-visual-copy .eyebrow,
+.aero-auth-card > .eyebrow,
+.aero-auth-mobile-brand { display: none; }
+.aero-auth-card {
+  position: relative;
+  z-index: 3;
+  width: min(420px, 40vw);
+  min-height: 0;
+  padding: 34px;
+  border: 1px solid rgba(115,167,223,.44);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(11,31,55,.93), rgba(7,21,40,.88));
+  box-shadow: 0 26px 80px rgba(0,0,0,.48);
+  backdrop-filter: blur(20px);
+}
+.aero-auth-card h2,
+.aero-auth-card > .muted { text-align: center; }
+.aero-auth-card h2 { margin-top: 0; }
+.aero-auth-card input { border-color: rgba(93,148,207,.48); background: rgba(8,29,54,.78); }
+.aero-auth-card .primary { background: linear-gradient(180deg, #1684ff, #0866d9); box-shadow: 0 10px 28px rgba(0,105,230,.34); }
+
+@media (max-width: 920px) {
+  .aero-sidebar { width: min(292px, 86vw); padding-top: 12px; }
+  .aero-sidebar-brand { min-height: 122px; padding-right: 48px; }
+  .aero-sidebar-nav { gap: 12px; padding-top: 12px; }
+  .aero-nav-group { gap: 3px; }
+  .aero-nav-group h2,
+  .aero-utility-context > div,
+  .aero-profile-control { display: none; }
+  .aero-nav-item { min-height: 42px; }
+  .aero-utility-bar { min-height: 62px; padding-inline: 18px; }
+  .aero-mobile-wing {
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 116px;
+    transform: translateX(-50%);
+  }
+  .aero-icon-button,
+  .aero-mobile-menu { width: 38px; height: 38px; border-color: transparent; background: transparent; }
+  .aero-mobile-nav { min-height: 68px; border-color: #173451; background: rgba(4,18,33,.98); }
+  .aero-mobile-nav button.active { background: transparent; color: #1694ff; }
+
+  .aero-auth { display: flex; align-items: flex-end; justify-content: center; min-height: 100svh; overflow: auto; padding: 18px; }
+  .aero-auth-visual { display: block; background-position: 50% center; }
+  .aero-auth-visual { background-image: url("/bristell-sunset-hero-v2.png"); }
+  .aero-auth-visual::before { background: linear-gradient(0deg, rgba(3,12,24,.72), rgba(3,12,24,.06) 74%); }
+  .aero-auth-visual > .aero-brand-lockup { width: 100%; margin: 16px auto 0; }
+  .aero-auth-visual > .aero-brand-lockup .aero-wing-wordmark { width: 190px; }
+  .aero-auth-visual > .aero-brand-lockup .aero-lockup-name { font-size: 34px; }
+  .aero-auth-visual-copy { display: none; }
+  .aero-auth-card { width: min(100%, 390px); min-height: 0; margin-top: min(54vh, 460px); padding: 22px; border-left: 1px solid rgba(115,167,223,.44); border-radius: 18px; }
+
+  .flight-deck-page .aero-page-hero { gap: 10px; padding-top: 24px; }
+  .aero-mobile-deck-brand { display: grid; margin-bottom: 12px; }
+  .aero-mobile-deck-brand strong { font-size: 25px; letter-spacing: -.05em; }
+  .aero-mobile-deck-brand strong span { color: #3098ff; }
+  .aero-mobile-deck-brand small { color: #c6d2df; font-size: 11px; }
+  .flight-deck-page .aero-page-hero .eyebrow,
+  .flight-deck-page .aero-page-hero .muted,
+  .flight-deck-page .aero-capability-line,
+  .flight-deck-page .aero-heading-aside { display: none; }
+  .flight-deck-page .aero-page-hero h1 { margin: 0; font-size: 17px; letter-spacing: -.015em; }
+  .flight-deck-page .admin-stats { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 9px; }
+  .flight-deck-page .stat-card { min-height: 86px; border-radius: 10px; }
+  .flight-deck-page .stat-card:nth-child(1) { background: linear-gradient(145deg, #0a3d73, #08294e); }
+  .flight-deck-page .stat-card:nth-child(2) { background: linear-gradient(145deg, #075d56, #063a38); }
+  .flight-deck-page .stat-card:nth-child(3) { background: linear-gradient(145deg, #5b3515, #38230f); }
+  .flight-deck-page .stat-card:nth-child(4) { background: linear-gradient(145deg, #3e3074, #28204e); }
+  .flight-deck-page .stat-card:nth-child(5) { display: none; }
+  .aero-mobile-quick-actions { display: block; margin-top: 18px; padding-top: 14px; border-top: 1px solid #1f4261; }
+  .aero-mobile-quick-actions h2 { margin: 0 0 11px; font-size: 15px; }
+  .aero-mobile-quick-actions > div { display: grid; grid-template-columns: repeat(3,1fr); gap: 9px; }
+  .aero-mobile-quick-actions button { display: grid; place-items: center; min-height: 70px; gap: 6px; border: 1px solid #234664; border-radius: 9px; background: #081b2e; color: #e5eef8; cursor: pointer; font-size: 11px; }
+  .aero-mobile-quick-actions button:nth-child(2) { color: #18a0ff; }
+}
+
+/* Screenshot-matched icon finish */
+.aero-module-emblem,
+.aero-module-emblem.emblem-departures,
+.aero-module-emblem.emblem-headset,
+.aero-module-emblem.emblem-bookings,
+.aero-module-emblem.emblem-vr,
+.aero-module-emblem.emblem-aircraft,
+.aero-module-emblem.emblem-preflight,
+.aero-module-emblem.emblem-history,
+.aero-module-emblem.emblem-accounts {
+  border-color: #234b70;
+  background: linear-gradient(145deg, #081c31, #061526);
+  box-shadow: inset 0 0 20px rgba(57, 139, 213, .07);
+  color: #dceaff;
+}
+
+.aero-module-emblem::after {
+  display: none;
+}
+
+.aero-module-emblem svg {
+  stroke-width: 1.55;
+  filter: drop-shadow(0 0 5px rgba(99, 168, 232, .16));
+}
+
+.aero-module-emblem.bare {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.aero-sidebar-brand .aero-wing-image,
+.aero-mobile-wing .aero-wing-image,
+.aero-auth-visual .aero-wing-image {
+  filter: drop-shadow(0 5px 12px rgba(0, 0, 0, .34));
+}
+
+/* Keep the AeroPath wordmark on one line at every display size. */
+.aero-brand-lockup .aero-lockup-name {
+  display: inline-block;
+  width: max-content;
+  white-space: nowrap;
+}
+
+/* The sidebar brand is inside a button, so keep its blue word fragment inline. */
+.aero-brand-lockup .aero-lockup-name span {
+  display: inline !important;
+  width: auto !important;
+}
+
+/* ADMIN OPERATIONS CENTRE — live dashboard refinement */
+.operations-centre-page .aero-page-hero {
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.operations-centre-page .aero-page-hero h1 {
+  margin-bottom: 6px;
+}
+
+.operations-centre-page .aero-page-hero .aero-module-emblem.bare {
+  width: 58px;
+  height: 58px;
+  color: #b9dcff;
+}
+
+.operations-centre-page .aero-page-hero .aero-module-emblem.bare svg {
+  width: 54px;
+  height: 54px;
+}
+
+.operations-centre-page .admin-stats {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+.operations-centre-page .stat-card {
+  min-height: 98px;
+  justify-content: center;
+  padding: 15px 16px;
+  border-radius: 13px;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.operations-centre-page .stat-card strong {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.operations-centre-page .stat-card span {
+  font-size: 10px;
+  letter-spacing: 0.09em;
+}
+
+.operations-centre-page .stat-card.quiet {
+  border-color: #1e3954;
+  background: linear-gradient(145deg, #08192a, #071525);
+  color: #aac3db;
+}
+
+.operations-centre-page .stat-card.quiet span {
+  color: #7699b8;
+}
+
+.operations-centre-page .stat-card.has-work {
+  border-color: #2489ef;
+  background: linear-gradient(145deg, #0b3156, #08203a);
+  box-shadow: inset 0 0 24px rgba(30, 143, 255, 0.13), 0 10px 24px rgba(0, 65, 133, 0.12);
+  color: #ffffff;
+}
+
+.operations-centre-page .stat-card.has-work span {
+  color: #a8d4ff;
+}
+
+.operations-centre-page .stat-card:hover {
+  transform: translateY(-2px);
+  border-color: #52a5ff;
+}
+
+@media (max-width: 1120px) {
+  .operations-centre-page .admin-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 660px) {
+  .operations-centre-page .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .operations-centre-page .stat-card {
+    min-height: 84px;
+    padding: 13px;
+  }
+}
