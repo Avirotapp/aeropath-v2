@@ -8,6 +8,7 @@ import { supabase } from "./lib/supabase";
 import ActionSuccessModal from "./ActionSuccessModal";
 import ActionFormModal from "./ActionFormModal";
 import ModuleEmblem from "./ModuleEmblem";
+import AeroIcon from "./AeroIcon";
 
 
 async function rpc(
@@ -899,9 +900,9 @@ export default function AdminOperationsCentrePage({
                 Operations controls
               </h2>
 
-              <div className="booking-actions">
+              <div className="operations-quick-actions">
                 <button
-                  className="primary"
+                  className="operations-quick-action primary"
                   type="button"
                   disabled={busy}
                   onClick={() =>
@@ -910,11 +911,12 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="bookings" size={22} />
                   Book for Student
                 </button>
 
                 <button
-                  className="secondary"
+                  className="operations-quick-action"
                   type="button"
                   onClick={() =>
                     onNavigate(
@@ -922,11 +924,12 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="bookings" size={21} />
                   Booking Operations
                 </button>
 
                 <button
-                  className="secondary"
+                  className="operations-quick-action"
                   type="button"
                   onClick={() =>
                     onNavigate(
@@ -934,11 +937,12 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="timetable" size={21} />
                   Timetable
                 </button>
 
                 <button
-                  className="secondary"
+                  className="operations-quick-action"
                   type="button"
                   onClick={() =>
                     onNavigate(
@@ -946,11 +950,12 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="sessions" size={21} />
                   Sessions
                 </button>
 
                 <button
-                  className="secondary"
+                  className="operations-quick-action"
                   type="button"
                   onClick={() =>
                     onNavigate(
@@ -958,11 +963,12 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="history" size={21} />
                   Training History
                 </button>
 
                 <button
-                  className="secondary"
+                  className="operations-quick-action"
                   type="button"
                   onClick={() =>
                     onNavigate(
@@ -970,11 +976,12 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="preflight" size={21} />
                   Pre-flight Reviews
                 </button>
 
                 <button
-                  className="secondary"
+                  className="operations-quick-action"
                   type="button"
                   onClick={() =>
                     onNavigate(
@@ -982,11 +989,12 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="ground" size={21} />
                   Ground School
                 </button>
 
                 <button
-                  className="secondary"
+                  className="operations-quick-action"
                   type="button"
                   onClick={() =>
                     onNavigate(
@@ -994,11 +1002,12 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="files" size={21} />
                   Files
                 </button>
 
                 <button
-                  className="secondary"
+                  className="operations-quick-action"
                   type="button"
                   onClick={() =>
                     onNavigate(
@@ -1006,11 +1015,12 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="accounts" size={21} />
                   Accounts
                 </button>
 
                 <button
-                  className="secondary"
+                  className="operations-quick-action"
                   type="button"
                   onClick={() =>
                     onNavigate(
@@ -1018,11 +1028,12 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="fleet" size={21} />
                   Fleet &amp; Simulators
                 </button>
 
                 <button
-                  className="secondary"
+                  className="operations-quick-action"
                   type="button"
                   onClick={() =>
                     onNavigate(
@@ -1030,11 +1041,12 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="safety" size={21} />
                   Safety Control Tower
                 </button>
 
                 <button
-                  className="secondary"
+                  className="operations-quick-action"
                   type="button"
                   onClick={() =>
                     onNavigate(
@@ -1042,11 +1054,12 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="audit" size={21} />
                   Audit Trail
                 </button>
 
                 <button
-                  className="secondary"
+                  className="operations-quick-action"
                   type="button"
                   onClick={() =>
                     onNavigate(
@@ -1054,11 +1067,12 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="bell" size={21} />
                   Notifications
                 </button>
 
                 <button
-                  className="secondary"
+                  className="operations-quick-action"
                   type="button"
                   onClick={() =>
                     onNavigate(
@@ -1066,102 +1080,9 @@ export default function AdminOperationsCentrePage({
                     )
                   }
                 >
+                  <AeroIcon name="profile" size={21} />
                   My Profile
                 </button>
-              </div>
-            </article>
-          </section>
-
-
-          <section
-            style={{
-              maxWidth:
-                "1180px",
-              margin:
-                "0 auto 24px",
-              padding:
-                "0 20px",
-            }}
-          >
-            <article className="student-booking-card">
-              <div className="eyebrow">
-                ALL MODULES
-              </div>
-
-              <h2>
-                AeroPath workspace
-              </h2>
-
-              <p className="muted">
-                Admin-equivalent access to the complete AeroPath operational workspace.
-              </p>
-
-              <div
-                style={{
-                  display: "grid",
-                  gap: "24px",
-                  marginTop: "20px",
-                }}
-              >
-                {allModules.map(
-                  (group) => (
-                    <div
-                      key={
-                        group.group
-                      }
-                    >
-                      <div
-                        className="eyebrow"
-                        style={{
-                          marginBottom:
-                            "10px",
-                        }}
-                      >
-                        {group.group}
-                      </div>
-
-                      <div className="grid">
-                        {group.items.map(
-                          (item) => (
-                            <article
-                              key={
-                                item.route
-                              }
-                              className="card clickable-card"
-                              onClick={() =>
-                                onNavigate(
-                                  item.route
-                                )
-                              }
-                            >
-                              <ModuleEmblem
-                                bare
-                                compact
-                                name={moduleIllustrations[item.route] || "aircraft"}
-                              />
-
-                              <h3>
-                                {
-                                  item.title
-                                }
-                              </h3>
-
-                              <p>
-                                {
-                                  item.description
-                                }
-                              </p>
-
-                              <span className="status">
-                                OPEN MODULE
-                              </span>
-                            </article>
-                          )
-                        )}
-                      </div>
-                    </div>
-                  )
-                )}
               </div>
             </article>
           </section>

@@ -12,7 +12,7 @@ Visual identity 2.25.10 replaces the generic module-card diamonds with lightweig
 
 Visual identity 2.25.11 follows the supplied AeroPath interface references: an immersive parked-Bristell sunset sign-in with a floating glass form, Aeroviation wing lockups, blue active navigation, a compact mobile Flight Deck, quick actions and Home/Timetable/Sessions/More navigation.
 
-Visual identity 2.25.16 keeps the supplied Aeroviation reference direction while making the full app calmer and easier to scan: page headings, cards, forms, controls, tables and status labels now share one compact operational finish. The official dark-background Aeroviation lockup and the complete pale-blue outline icon family remain consistent, the AeroPath wordmark stays on one line at every size, and active work is clearer without turning every screen into a brightly coloured dashboard.
+Visual identity 2.25.17 keeps the supplied Aeroviation reference direction while making the full app calmer and easier to scan: page headings, cards, forms, controls, tables and status labels now share one compact operational finish. The Operations Centre now uses compact icon-based actions and removes the duplicate module directory, leaving the sidebar as the reliable workspace navigation. The official dark-background Aeroviation lockup and pale-blue outline icon family remain consistent, while active work is clearer without turning every screen into a brightly coloured dashboard.
 
 ## Migration 025 scope
 

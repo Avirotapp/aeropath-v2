@@ -15,7 +15,8 @@ Version 2.25.10 removes the module-card diamonds, adds the requested aviation
 illustrations and introduces the Bristell-at-sunset sign-in scene.
 Version 2.25.11 follows the supplied visual references for the full-screen sign-in,
 Aeroviation wing branding, mobile drawer, dashboard and bottom navigation.
-Version 2.25.16 adds a shared compact operational finish across all modules,
+Version 2.25.17 refines Operations Centre into icon-based quick actions and
+removes its duplicate module directory. Version 2.25.16 adds a shared compact operational finish across all modules,
 including page hierarchy, cards, forms, tables, controls and status labels.
 Version 2.25.15 adds a separate wide desktop aircraft scene, precisely recolours
 the official wing logo for dark backgrounds and redraws the complete module icon family

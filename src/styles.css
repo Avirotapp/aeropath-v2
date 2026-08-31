@@ -1222,6 +1222,81 @@ textarea:focus {
   }
 }
 
+/* M027 — operations dashboard, reduced to the decisions an administrator
+   actually needs to make. Navigation remains available in the sidebar. */
+.operations-centre-page .student-booking-card:has(.operations-quick-actions) {
+  padding: 22px 24px 24px;
+}
+
+.operations-quick-actions {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.operations-quick-action {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  min-height: 82px;
+  padding: 12px 8px;
+  border: 1px solid rgba(97, 151, 194, 0.34);
+  border-radius: 12px;
+  background: rgba(7, 23, 38, 0.62);
+  color: #dce9f5;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.2;
+  text-align: center;
+  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.operations-quick-action svg {
+  color: #9bcfff;
+}
+
+.operations-quick-action:hover {
+  transform: translateY(-2px);
+  border-color: #55aaff;
+  background: rgba(28, 111, 198, 0.16);
+  color: #ffffff;
+}
+
+.operations-quick-action.primary {
+  border-color: rgba(72, 155, 246, 0.74);
+  background: linear-gradient(145deg, #1479df, #0c5ab7);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 8px 18px rgba(5, 84, 177, 0.2);
+}
+
+.operations-quick-action.primary svg {
+  color: #ffffff;
+}
+
+@media (max-width: 1120px) {
+  .operations-quick-actions {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .operations-centre-page .student-booking-card:has(.operations-quick-actions) {
+    padding: 18px;
+  }
+
+  .operations-quick-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .operations-quick-action {
+    min-height: 74px;
+    font-size: 10px;
+  }
+}
+
 /* UI REDESIGN R3 — SESSIONS + TRAINING HISTORY */
 
 .sessions-redesign-page .sessions-page > .back-button,
